@@ -1,0 +1,11 @@
+<p>User's index</p>
+
+<%= link_to "Sign Out", destroy_user_session_path %>
+
+<h1>Welcome: <%= current_user.fname %></h1>
+
+<h3>List of All WDI Students:</h3>
+<% @users.each do |user| %>
+  <%= user.fname %>
+<% end %>
+

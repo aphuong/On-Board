@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admins, controllers: { sessions: 'admins/sessions' }
-  devise_for :users, controllers: {
-        sessions: 'users/sessions'
-      }
+  devise_for :users, controllers: { sessions: 'users/sessions' }
 
   authenticated :admin do
     root :to => "admins#index", :as => "authenticated_root"
@@ -14,6 +12,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'users#home'
+  
+  get 'users/' => 'users#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

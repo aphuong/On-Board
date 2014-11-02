@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
   authenticated :admin do
-    root :to => "admins#index", :as => "authenticated_root"
+    root :to => "admins#index", :as => "authenticated_admin"
   end
 
   authenticated :user do

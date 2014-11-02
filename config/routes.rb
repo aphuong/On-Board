@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   authenticated :admin do
     root :to => "admins#index", :as => "authenticated_root"
   end
+
+  authenticated :user do
+    root :to => 'users#index', :as => 'authenticated_user'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   get 'admins' => "admins#home"
@@ -12,9 +16,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'users#home'
-  
-  get 'users/' => 'users#index'
 
+  get 'users/dashboard' => 'users#index'
+  get 'user/:id' => 'users#show', :as => 'show_user'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

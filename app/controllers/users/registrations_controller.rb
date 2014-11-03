@@ -10,6 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   # def create
   #   super
+  #   redirect_to edit_user_registration_path, notice: 'User profile successfully updated.'
   # end
 
   # GET /resource/edit
@@ -20,6 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   # def update
   #   super
+    # redirect_to edit_user_registration_path, notice: 'User profile successfully updated.'
   # end
 
   # DELETE /resource

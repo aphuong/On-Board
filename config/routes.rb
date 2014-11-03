@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   get 'users/dashboard' => 'users#index'
   get 'user/:id' => 'users#show', :as => 'show_user'
-  get 'user/edit' => 'users#edit', :as => 'edit_user'
+  get 'user/:id/edit' => 'users#edit', :as => 'edit_user'
   patch 'user/update_password' => 'users#update_password'
   patch 'user/:id/edit' => 'users#update'
 

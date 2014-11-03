@@ -12,13 +12,13 @@ class UsersController < ApplicationController
   end
 
   def edit
-    # @user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to edit_user_path, notice: 'User profile successfully updated.'
+      redirect_to edit_user_path(@user), notice: 'User profile successfully updated.'
     else
       render :show, alert: 'Sorry - something went wrong.'
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
     if @user.update_with_password(user_params)
       sign_in @user, :bypass => true
-      redirect_to edit_user_path, notice: 'User account successfully updated.'
+      redirect_to edit_user_path(@user), notice: 'User account successfully updated.'
     else
       render "edit"
     end

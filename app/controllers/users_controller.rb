@@ -18,7 +18,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to edit_user_path(@user), notice: 'User profile successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to edit_user_path(@user), notice: 'User profile successfully updated.' }
+        format.json { respond_with_bip(@user) }
+      end
     else
       render :show, alert: 'Sorry - something went wrong.'
     end

@@ -13,20 +13,26 @@
 
 
   <div class="column">
-    <h4>Contact:</h4>
-    <p><%= @user.email %></p>
 
-    <h4>Location:</h4>
-    <p><%= @user.location %></p>
+    <% if current_user %>
 
-    <h4>Fun Fact About Me:</h4>
-    <p><%= @user.fun_fact %></p>
+      <p><i class="fa fa-pencil"></i><%= best_in_place @user, :fname, as: :input, url: edit_user_path(@user) %></p>
+      <p><i class="fa fa-pencil"></i><%= best_in_place @user, :lname, as: :input, url: edit_user_path(@user) %></p>
+     
+      <h4>Location:</h4>
+      <p><i class="fa fa-pencil"></i><%= best_in_place @user, :location, as: :input, url: edit_user_path(@user) %></p>
 
-    <h4>Goals:</h4>
-    <p><%= @user.goal %></p>
+      <h4>Fun Fact About Me:</h4>
+      <p><i class="fa fa-pencil"></i><%= best_in_place @user, :fun_fact, as: :textarea, url: edit_user_path(@user) %></p>
 
-    <h4>Prior Experience:</h4>
-    <p><%= @user.pre_wdi %></p>
+      <h4>Goals:</h4>
+      <p><i class="fa fa-pencil"></i><%= best_in_place @user, :goal, as: :textarea, url: edit_user_path(@user) %></p>
+
+      <h4>Prior Experience:</h4>
+      <p><i class="fa fa-pencil"></i><%= best_in_place @user, :pre_wdi, as: :textarea, url: edit_user_path(@user) %></p>
+
+    <% end %>
+
   </div>
 
 </div>

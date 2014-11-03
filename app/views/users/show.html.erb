@@ -1,19 +1,32 @@
-<p><%= @user.fname %>'s homepage</p>
+<div class="wrapper">
+  <p>This should show user's profile</p>
+  
+  <h3 class="username"><%= @user.fullname %></h3>
 
-<p>This should show user's profile</p>
+  <div class="column">
+    <div class="placeholder-img"></div>
+    <%= link_to "github", "https://github.com/#{@user.github_username}" %>
+    <%= link_to "tumblr", "http://#{@user.tumblr_username}.tumblr.com" %>
+    <%= link_to "twitter", "https://twitter.com/#{@user.twitter_username}" %>
+    <%= link_to "linked in", "https://www.linkedin.com/in/#{@user.linkedin_username}" %>
+  </div>
 
-<div>
-  <h3><%= @user.fullname %></h3>
-  <p><%= @user.email %></p>
-  <p><%= @user.location %></p>
 
-  <h3>Fun Fact About Me:</h3>
-  <p><%= @user.fun_fact %></p>
+  <div class="column">
+    <h4>Contact:</h4>
+    <p><%= @user.email %></p>
 
-  <h3>Goals:</h3>
-  <p><%= @user.goal %></p>
+    <h4>Location:</h4>
+    <p><%= @user.location %></p>
 
-  <h3>Prior Experience:</h3>
-  <p><%= @user.pre_wdi %></p>
+    <h4>Fun Fact About Me:</h4>
+    <p><%= @user.fun_fact %></p>
+
+    <h4>Goals:</h4>
+    <p><%= @user.goal %></p>
+
+    <h4>Prior Experience:</h4>
+    <p><%= @user.pre_wdi %></p>
+  </div>
+
 </div>
-

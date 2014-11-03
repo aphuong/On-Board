@@ -1,0 +1,22 @@
+.wrapper {
+  margin: 20px;
+}
+
+
+// profile show page:
+
+.username {
+  text-align: center;
+}
+
+.placeholder-img {
+  width: 200px;
+  height: 200px;
+  background-color: $red-orange;
+}
+
+.column {
+  width: 49%;
+  display: inline-block;
+  vertical-align: top;
+}

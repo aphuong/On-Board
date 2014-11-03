@@ -2,9 +2,30 @@
  *= require_self
  */
 
-.delete-form,
-.profile-form,
-.account-form {
-  background-color: #efefef;
-  margin-bottom: 30px;
-}
+// .delete-form,
+// .profile-form,
+// .account-form {
+//   background-color: #efefef;
+//   margin-bottom: 30px;
+// }
+
+// Variables
+@import 'variables';
+
+
+// Vendor
+@import 'normalize';
+
+
+// Stylesheets
+@import 'users';
+
+
+
+// Partial
+@import 'user_nav';
+
+
+// Components
+@import 'forms';
+@import 'buttons';

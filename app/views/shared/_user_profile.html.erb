@@ -1,0 +1,59 @@
+<%= form_for current_user, url: edit_user_path(current_user.id) do |f| %>
+  
+  <p>Please complete these required fields to update your user profile.</p>
+
+  <div>
+    <%= f.label :fname, "First Name" %><br />
+    <%= f.text_field :fname, class: "form-control", placeholder: "First Name", required: true %>
+  </div>
+
+  <div>
+    <%= f.label :lname, "Last Name" %><br />
+    <%= f.text_field :lname, class: "form-control", placeholder: "Last Name", required: true %>
+  </div>
+
+  <div>
+    <%= f.label :location %><br />
+    <%= f.text_field :location, class: "form-control", placeholder: "Location", required: true  %>
+  </div>
+
+  <div>
+    <%= f.label :goal, "Goals" %><br />
+    <%= f.text_area :goal, class: "form-control", placeholder: "Goals", required: true %>
+  </div>
+
+  <div>
+    <%= f.label :fun_fact, "Fun Fact About You" %><br />
+    <%= f.text_area :fun_fact, class: "form-control", placeholder: "Fun Fact", required: true %>
+  </div>
+ 
+  <div>
+    <%= f.label :pre_wdi, "What were you doing before WDI?" %><br />
+    <%= f.text_area :pre_wdi, class: "form-control", placeholder: "Pre WDI", required: true %>
+  </div>
+
+  <p>In order to make the most of your time with us and to best prepare for life beyond the course, we recommend you to set up the following accounts:</p>
+  <div>
+    <%= f.label :github_username, "Github Username" %><br />
+    <%= f.text_field :github_username, class: "form-control", placeholder: "Github Username" %>
+  </div>
+
+  <div>
+    <%= f.label :twitter_username, "Github Username" %><br />
+    <%= f.text_field :twitter_username, class: "form-control", placeholder: "Twitter Username" %>
+  </div>
+
+  <div>
+    <%= f.label :tumblr_username, "Tumblr Username" %><br />
+    <%= f.text_field :tumblr_username, class: "form-control", placeholder: "Tumblr Username" %>
+  </div>
+
+  <div>
+    <%= f.label :linkedin_username, "LinkedIn Username" %><br />
+    <%= f.text_field :linkedin_username, class: "form-control", placeholder: "LinkedIn Username" %>
+  </div>
+  
+  <div><%= f.submit %></div>
+<% end %>
+
+

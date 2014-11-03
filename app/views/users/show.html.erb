@@ -1,8 +1,19 @@
 <p><%= @user.fname %>'s homepage</p>
 
 <p>This should show user's profile</p>
-  <ul>
-    <li>links to social</li>
-    <li>bio</li>
-    <li>location</li>
-    <li>etc...</li>
+
+<div>
+  <h3><%= @user.fullname %></h3>
+  <p><%= @user.email %></p>
+  <p><%= @user.location %></p>
+
+  <h3>Fun Fact About Me:</h3>
+  <p><%= @user.fun_fact %></p>
+
+  <h3>Goals:</h3>
+  <p><%= @user.goal %></p>
+
+  <h3>Prior Experience:</h3>
+  <p><%= @user.pre_wdi %></p>
+</div>
+

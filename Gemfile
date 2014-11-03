@@ -30,6 +30,8 @@ gem 'devise'
 
 gem 'pry-rails'
 
+gem 'devise_invitable', '~> 1.3.4'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

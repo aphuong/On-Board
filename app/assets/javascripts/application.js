@@ -21,5 +21,18 @@ $(document).ready(function() {
 
   $(".best_in_place").best_in_place();
 
+  $(".edit-btn").click(function(){
+    $(".edit-container").show();
+    $(".profile-container").hide();
+    $(".done-btn").show();
+    $(this).hide();
+  });
+
+  $(".done-btn").click(function(){
+    $(".edit-container").hide();
+    $(".profile-container").show();
+    $(this).hide();
+    $(".edit-btn").show();
+  });
   
 });

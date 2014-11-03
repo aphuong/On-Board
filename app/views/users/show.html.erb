@@ -5,33 +5,90 @@
 
   <div class="column">
     <div class="placeholder-img"></div>
-    <%= link_to "github", "https://github.com/#{@user.github_username}" %>
-    <%= link_to "tumblr", "http://#{@user.tumblr_username}.tumblr.com" %>
-    <%= link_to "twitter", "https://twitter.com/#{@user.twitter_username}" %>
-    <%= link_to "linked in", "https://www.linkedin.com/in/#{@user.linkedin_username}" %>
+
+    <%= link_to "https://github.com/#{@user.github_username}" do %>
+      <span class="social-icon"><i class="fa fa-github-square"></i></span>
+    <% end %>
+
+    <%= link_to "http://#{@user.tumblr_username}.tumblr.com" do %>
+      <span class="social-icon"><i class="fa fa-tumblr-square"></i></span>
+    <% end %>
+
+    <%= link_to "https://twitter.com/#{@user.twitter_username}" do %>
+      <span class="social-icon"><i class="fa fa-twitter-square"></i></span>
+    <% end %>
+
+    <%= link_to "https://www.linkedin.com/in/#{@user.linkedin_username}"  do %>
+      <span class="social-icon"><i class="fa fa-linkedin-square"></i></span>
+    <% end %>
   </div>
 
 
   <div class="column">
 
     <% if current_user %>
-
-      <p><i class="fa fa-pencil"></i><%= best_in_place @user, :fname, as: :input, url: edit_user_path(@user) %></p>
-      <p><i class="fa fa-pencil"></i><%= best_in_place @user, :lname, as: :input, url: edit_user_path(@user) %></p>
-     
-      <h4>Location:</h4>
-      <p><i class="fa fa-pencil"></i><%= best_in_place @user, :location, as: :input, url: edit_user_path(@user) %></p>
-
-      <h4>Fun Fact About Me:</h4>
-      <p><i class="fa fa-pencil"></i><%= best_in_place @user, :fun_fact, as: :textarea, url: edit_user_path(@user) %></p>
-
-      <h4>Goals:</h4>
-      <p><i class="fa fa-pencil"></i><%= best_in_place @user, :goal, as: :textarea, url: edit_user_path(@user) %></p>
-
-      <h4>Prior Experience:</h4>
-      <p><i class="fa fa-pencil"></i><%= best_in_place @user, :pre_wdi, as: :textarea, url: edit_user_path(@user) %></p>
-
+      <a href="#" class="edit-btn">Edit</a>
+      <a href="#" class="done-btn">Done editing</a>
     <% end %>
+
+    <div class="edit-container">
+      <div>
+        <span class="icon"><i class="fa fa-pencil"></i></span>
+        <%= best_in_place @user, :fname, as: :input, url: edit_user_path(@user) %>
+      </div>
+
+      <div>
+        <span class="icon"><i class="fa fa-pencil"></i></span>
+        <%= best_in_place @user, :lname, as: :input, url: edit_user_path(@user) %>
+      </div>
+     
+      <div>
+        <h4>Location:</h4>
+        <span class="icon"><i class="fa fa-pencil"></i></span>
+        <%= best_in_place @user, :location, as: :input, url: edit_user_path(@user) %>
+      </div>
+
+      <div>
+        <h4>Fun Fact About Me:</h4>
+        <span class="icon"><i class="fa fa-pencil"></i></span>
+        <%= best_in_place @user, :fun_fact, as: :textarea, url: edit_user_path(@user) %>
+      </div>
+
+      <div>
+        <h4>Goals:</h4>
+        <span class="icon"><i class="fa fa-pencil"></i></span>
+        <%= best_in_place @user, :goal, as: :textarea, url: edit_user_path(@user) %>
+      </div>
+
+      <div>
+        <h4>Prior Experience:</h4>
+        <span class="icon"><i class="fa fa-pencil"></i></span>
+        </i><%= best_in_place @user, :pre_wdi, as: :textarea, url: edit_user_path(@user) %>
+      </div>
+    </div>
+
+ 
+    <div class="profile-container">
+      <div>
+        <h4>Location:</h4>
+        <%= @user.location %>
+      </div>
+
+      <div>
+        <h4>Fun Fact About Me:</h4>
+        <%= @user.fun_fact %>
+      </div>
+
+      <div>
+        <h4>Goals:</h4>
+        <%= @user.goal %>
+      </div>
+
+      <div>
+        <h4>Prior Experience:</h4>
+        <%= @user.pre_wdi %>
+      </div>
+    </div>
 
   </div>
 

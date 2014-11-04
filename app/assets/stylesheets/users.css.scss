@@ -37,3 +37,29 @@
   font-size: 3em;
   text-align: center;
 }
+
+.checklist-container {
+  width: 50%;
+  border: 1px solid #AAA;
+
+  li {
+    list-style: none;
+    vertical-align: middle;
+  }
+}
+
+.check-btn {
+  padding-right: 10px;
+}
+
+.item {
+  height: 30px;
+  text-align: left;
+}
+
+.checked-line-item {
+  height: 30px;
+  text-align: left;
+  font-size: $normal;
+  background-color: rgba(231, 83, 44, .4);
+}

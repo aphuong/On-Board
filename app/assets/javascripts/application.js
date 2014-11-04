@@ -65,4 +65,23 @@ $(document).ready(function() {
     $(this).hide();
   });
 
+  $("#edit-checklist-btn").on('click', function() {
+    $(".edit-checklist").show();
+    $(".checklist-container").hide();
+    $("#done-checklist-btn").show();
+    $(this).hide();
+  });
+
+  $("#done-checklist-btn").on('click', function() {
+    $(".checklist-container").show();
+    $(".edit-checklist").hide();
+    $("#edit-checklist-btn").show();
+    $(this).hide();
+  });
+
+  $(".check-btn").on('click', function() {
+    $(this).closest(".line-item").css({
+      'background-color': '#E7542C',
+    });
+  });
 });

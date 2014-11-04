@@ -35,7 +35,7 @@
 <% end %>
 
 <a href="#" id="edit-checklist-btn">Edit</a>
-<a href="#" id="done_checklist-btn">Done editing</a>
+<a href="#" id="done-checklist-btn">Done editing</a>
 
 <div class="checklist">
   <% @todos.each do |todo| %>
@@ -52,6 +52,12 @@
     </div>
   <% end %>
 </div>
+
+<% @users.each do |user| %>
+  <ul>
+    <li><%= link_to user.fname, show_user_path(user)  %></li>
+  </ul>
+<% end %>
 
 <%= link_to "Sign-out", destroy_admin_session_path, method: :delete %>
 

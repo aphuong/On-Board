@@ -122,4 +122,14 @@
     <% end %>
   </div>
 
+<% if current_user?(@user) || current_admin?(@admin) %>
+  <div class="checklist-container">
+    <h2>Checklist</h2>
+    <% @todos.each do |todo| %>
+      <ul class="line-item">
+        <li><span class="check-btn"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %></li>
+      </ul>
+    <% end %>
+  </div>
+<% end %>
 </div>

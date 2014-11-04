@@ -5,6 +5,7 @@ class AdminsController < ApplicationController
   end
 
   def index
+    @users = User.all
     @announcements = Announcement.all
     @announcement = Announcement.new
     @todos = Todo.all

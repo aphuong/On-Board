@@ -20,3 +20,17 @@
   display: inline-block;
   vertical-align: top;
 }
+
+.edit-container {
+  display: none;
+
+  .icon {
+    font-size: $small;
+  }
+}
+
+.social-icon {
+  font-size: 2em;
+}
+
+

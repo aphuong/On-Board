@@ -1,0 +1,9 @@
+<p>Share a project</p>
+
+<%= form_for @project do |f| %>
+  <%= f.label :title, "Title" %>
+  <%= f.text_field :title,  :maxlength => 40, class: "form-control", autofocus: true, placeholder: "Project title", required: true %>
+  <%= f.label :project_url, "Link to your project" %>
+  <%= f.text_field :project_url,  :maxlength => 40, class: "form-control", placeholder: "Share a link to your project", required: true %>
+  <%= f.submit %>
+<% end %>

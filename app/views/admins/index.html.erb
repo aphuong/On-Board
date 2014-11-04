@@ -28,6 +28,37 @@
 
 <% end %>
 
+<%= form_for @todo do |f| %>
+  <%= f.label :body, "List item" %>
+  <%= f.text_field :body %>
+  <%= f.submit %>
+<% end %>
+
+<a href="#" id="edit-checklist-btn">Edit</a>
+<a href="#" id="done-checklist-btn">Done editing</a>
+
+<div class="checklist">
+  <% @todos.each do |todo| %>
+    <div class="edit-checklist">
+      <ul>
+        <li class="fa fa-pencil"><%= best_in_place todo, :body, as: :input, url: todo_path(todo.id) %></li>
+      </ul>
+    </div>
+
+    <div class="checklist-container">
+      <ul>
+        <li><%= best_in_place todo, :body, as: :input, url: todo_path(todo.id) %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
+<% @users.each do |user| %>
+  <ul>
+    <li><%= link_to user.fname, show_user_path(user)  %></li>
+  </ul>
+<% end %>
+
 <%= link_to "Sign-out", destroy_admin_session_path, method: :delete %>
 
 <%= link_to "Send invite", new_user_invitation_path %>

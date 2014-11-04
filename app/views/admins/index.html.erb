@@ -8,6 +8,11 @@
   <%= f.submit %>
 <% end %>
 
+<% @announcements.each do |announcement| %>
+  <ul>
+    <li class="fa fa-pencil"><%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id)%></li>
+  </ul>
+<% end %>
 <%= link_to "Sign-out", destroy_admin_session_path, method: :delete %>
 
 <%= link_to "Send invite", new_user_invitation_path %>

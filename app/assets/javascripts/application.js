@@ -36,6 +36,10 @@ $(document).ready(function() {
     }
   });
 
+  $(".sign-in-btn").click(function(){
+    $(".user-sign-in-form").toggle(300);
+  });
+
 
   $(".edit-btn").click(function(){
     $(".edit-container").show();

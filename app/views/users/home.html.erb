@@ -2,5 +2,7 @@
 
 <p> This page should have some content about our site</p>
 
-<p>Users sign in:</p>
-<%= link_to "Sign In", new_user_session_path %>
+<span class="sign-in-btn">Sign In</span>
+
+<div class="user-sign-in-form"><%= render "users/sessions/user_signin" %></div>
+

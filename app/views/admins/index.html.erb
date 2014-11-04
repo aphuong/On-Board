@@ -8,11 +8,26 @@
   <%= f.submit %>
 <% end %>
 
+
+<a href="#" id="edit-announcement-btn">Edit</a>
+<a href="#" id="done-announcement-btn">Done editing</a>
+
 <% @announcements.each do |announcement| %>
-  <ul>
-    <li class="fa fa-pencil"><%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id)%></li>
-  </ul>
+
+  <div class="edit-announcement">
+    <ul>
+      <li class="fa fa-pencil"><%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id) %></li>
+    </ul>
+  </div>
+
+  <div class="announcement-container">
+    <ul>
+      <li><%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id) %></li>
+    </ul>
+  </div>
+
 <% end %>
+
 <%= link_to "Sign-out", destroy_admin_session_path, method: :delete %>
 
 <%= link_to "Send invite", new_user_invitation_path %>

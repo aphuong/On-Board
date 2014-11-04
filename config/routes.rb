@@ -24,5 +24,4 @@ Rails.application.routes.draw do
   patch 'user/update_password' => 'users#update_password'
   patch 'user/:id/edit' => 'users#update'
 
-
 end

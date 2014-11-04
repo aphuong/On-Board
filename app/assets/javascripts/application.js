@@ -23,6 +23,23 @@ $(document).ready(function() {
 
   $(".best_in_place").best_in_place();
 
+
+  // after bip editing happens
+  $('.best_in_place').bind("ajax:success", function() {
+    fields = $('.update-from-bip')
+
+    // find updatable fields
+    for (i = 0; i < fields.length; i++) {
+      field = fields[i]
+      field_name = $(field).data('name')
+
+      // loop through and replace with updated content
+      bip_element = $(".best_in_place[data-bip-attribute=" + field_name + "]")
+      $(field).text(bip_element.text());
+    }
+  });
+
+
   $(".edit-btn").click(function(){
     $(".edit-container").show();
     $(".profile-container").hide();
@@ -36,5 +53,5 @@ $(document).ready(function() {
     $(this).hide();
     $(".edit-btn").show();
   });
-  
+
 });

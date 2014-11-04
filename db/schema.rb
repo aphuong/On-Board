@@ -51,12 +51,9 @@ ActiveRecord::Schema.define(version: 20141103212502) do
 
   create_table "announcements", force: true do |t|
     t.text     "body"
-    t.integer  "admin_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "announcements", ["admin_id"], name: "index_announcements_on_admin_id"
 
   create_table "users", force: true do |t|
     t.string   "fname"

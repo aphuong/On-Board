@@ -2,6 +2,17 @@
 
 <p>This page has forms/interfaces that allow admins to add students, email group, make announcements, and edit checklists.</p>
 
+<%= form_for @announcement do |f| %>
+  <%= f.label :body, "Announcement" %>
+  <%= f.text_area :body %>
+  <%= f.submit %>
+<% end %>
+
+<% @announcements.each do |announcement| %>
+  <ul>
+    <li class="fa fa-pencil"><%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id)%></li>
+  </ul>
+<% end %>
 <%= link_to "Sign-out", destroy_admin_session_path, method: :delete %>
 
 <%= link_to "Send invite", new_user_invitation_path %>

@@ -6,4 +6,5 @@ module UsersHelper
   def current_admin?(admin)
     admin == current_admin
   end
+
 end

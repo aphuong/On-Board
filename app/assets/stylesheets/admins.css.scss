@@ -1,3 +1,18 @@
+.announcements {
+  font-size: $normal;
+  width: 50%;
+  float: left;
+}
+
+.checklist {
+  width: 45%;
+  float: right;
+}
+
+.students-list {
+  clear: both;
+}
+
 #done-announcement-btn {
   display:none
 }
@@ -12,4 +27,8 @@
 
 .edit-checklist {
   display:none
+}
+
+li {
+  list-style: none;
 }

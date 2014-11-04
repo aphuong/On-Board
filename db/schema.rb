@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103190757) do
+ActiveRecord::Schema.define(version: 20141103212502) do
 
   create_table "admins", force: true do |t|
     t.string   "fname"
@@ -48,6 +48,15 @@ ActiveRecord::Schema.define(version: 20141103190757) do
   add_index "admins", ["invitations_count"], name: "index_admins_on_invitations_count"
   add_index "admins", ["invited_by_id"], name: "index_admins_on_invited_by_id"
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "announcements", force: true do |t|
+    t.text     "body"
+    t.integer  "admin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "announcements", ["admin_id"], name: "index_announcements_on_admin_id"
 
   create_table "users", force: true do |t|
     t.string   "fname"

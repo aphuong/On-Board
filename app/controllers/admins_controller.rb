@@ -5,7 +5,8 @@ class AdminsController < ApplicationController
   end
 
   def index
-
+    @announcements = Announcement.all
+    @announcement = Announcement.new
   end
 
 end

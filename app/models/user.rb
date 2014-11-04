@@ -4,7 +4,12 @@ class User < ActiveRecord::Base
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  include Gravtastic
+  gravtastic
+  
   def fullname
     fname + " " + lname
   end
+
+
 end

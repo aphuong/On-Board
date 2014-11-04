@@ -1,7 +1,14 @@
 <div class="wrapper">
   <p>This should show user's profile</p>
-  
-  <h3 class="username"><%= @user.fullname %></h3>
+
+  <h3 class="username">
+    <span class="update-from-bip", data-name="fname">
+      <%= @user.fname %>
+    </span>
+    <span class="update-from-bip", data-name="lname">
+      <%= @user.lname %>
+    </span>
+  </h3>
 
   <div class="column">
 
@@ -48,7 +55,7 @@
         <span class="icon"><i class="fa fa-pencil"></i></span>
         <%= best_in_place @user, :lname, as: :input, url: edit_user_path(@user) %>
       </div>
-     
+
       <div>
         <h4>Location:</h4>
         <span class="icon"><i class="fa fa-pencil"></i></span>
@@ -74,26 +81,34 @@
       </div>
     </div>
 
- 
+
     <div class="profile-container">
       <div>
         <h4>Location:</h4>
-        <%= @user.location %>
+        <p class="update-from-bip", data-name="location">
+          <%= @user.location %>
+        </p>
       </div>
 
       <div>
         <h4>Fun Fact About Me:</h4>
-        <%= @user.fun_fact %>
+        <p class="update-from-bip", data-name="fun_fact">
+          <%= @user.fun_fact %>
+        </p>
       </div>
 
       <div>
         <h4>Goals:</h4>
-        <%= @user.goal %>
+        <p class="update-from-bip", data-name="goal">
+          <%= @user.goal %>
+        </p>
       </div>
 
       <div>
         <h4>Prior Experience:</h4>
-        <%= @user.pre_wdi %>
+        <p class="update-from-bip", data-name="pre_wdi">
+          <%= @user.pre_wdi %>
+        </p>
       </div>
     </div>
 

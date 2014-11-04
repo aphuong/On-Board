@@ -7,9 +7,5 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic
   
-  def fullname
-    fname + " " + lname
-  end
-
 
 end

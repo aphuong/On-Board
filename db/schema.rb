@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104061458) do
+ActiveRecord::Schema.define(version: 20141104164841) do
 
   create_table "admins", force: true do |t|
     t.string   "fname"
     t.string   "lname"
     t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: ""
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -32,36 +32,29 @@ ActiveRecord::Schema.define(version: 20141104061458) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "invitation_token"
-    t.datetime "invitation_created_at"
-    t.datetime "invitation_sent_at"
-    t.datetime "invitation_accepted_at"
-    t.integer  "invitation_limit"
-    t.integer  "invited_by_id"
-    t.string   "invited_by_type"
-    t.integer  "invitations_count",      default: 0
   end
 
   add_index "admins", ["confirmation_token"], name: "index_admins_on_confirmation_token", unique: true
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["invitation_token"], name: "index_admins_on_invitation_token", unique: true
-  add_index "admins", ["invitations_count"], name: "index_admins_on_invitations_count"
-  add_index "admins", ["invited_by_id"], name: "index_admins_on_invited_by_id"
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "announcements", force: true do |t|
     t.text     "body"
-    t.integer  "admin_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "announcements", ["admin_id"], name: "index_announcements_on_admin_id"
 
   create_table "projects", force: true do |t|
     t.integer  "user_id"
     t.string   "title"
     t.string   "project_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "todos", force: true do |t|
+    t.string   "body"
+    t.boolean  "complete"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

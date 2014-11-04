@@ -7,7 +7,51 @@
 <h1>Welcome: <%= current_user.fname %></h1>
 
 <h3>List of All WDI Students:</h3>
+
+
+<!-- hex -->
 <% @users.each do |user| %>
-  <%= link_to user.fname, show_user_path(user) %>
+  <div class="hex-container">
+    <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
+    <%= render 'users/hex' %>
+  </div>
 <% end %>
 
+
+
+
+<!---->
+
+<!-- <div class="hex-wrapper">
+  <div class="row">
+    <div class="row-one">
+      <div class="col-4 hex-1"></div>
+      <div class="col-4 hex-2"></div>
+      <div class="col-4 hex-3"></div>
+    <div>
+
+    <div class="row-two">
+      <div class="col-4 hex-1"></div>
+      <div class="col-4 hex-2"></div>
+      <div class="col-4 hex-3"></div>
+    <div>
+
+    <div class="row-three">
+      <div class="col-4 hex-1"></div>
+      <div class="col-4 hex-2"></div>
+      <div class="col-4 hex-3"></div>
+    <div>
+
+    <div class="row-four">
+      <div class="col-4 hex-1"></div>
+      <div class="col-4 hex-2"></div>
+      <div class="col-4 hex-3"></div>
+    <div>
+
+    <div class="row-five">
+      <div class="col-4 hex-1"></div>
+      <div class="col-4 hex-2"></div>
+      <div class="col-4 hex-3"></div>
+    <div>
+  </div>
+</div> -->

@@ -54,4 +54,18 @@ $(document).ready(function() {
     $(".edit-btn").show();
   });
 
+  $("#edit-announcement-btn").on('click', function() {
+    $(".edit-announcement").show();
+    $(".announcement-container").hide();
+    $("#done-announcement-btn").show();
+    $(this).hide();
+  });
+
+  $("#done-announcement-btn").on('click', function() {
+    $(".announcement-container").show();
+    $(".edit-announcement").hide();
+    $("#edit-announcement-btn").show();
+    $(this).hide();
+  });
+
 });

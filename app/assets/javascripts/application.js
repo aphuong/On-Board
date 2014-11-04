@@ -15,14 +15,11 @@
 //= require jquery_ujs
 //= require_tree .
 
-// removed turbolinks
-
 
 
 $(document).ready(function() {
 
   $(".best_in_place").best_in_place();
-
 
   // after bip editing happens
   $('.best_in_place').bind("ajax:success", function() {

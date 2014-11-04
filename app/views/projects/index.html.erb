@@ -2,9 +2,11 @@
 <p>This should list all projects</p>
 
 <% @projects.each do |project| %>
-  
-  <p><%= project.title %><p>
-  <p><%= link_to project.project_url %></p>
+
+  <%= link_to project.project_url do %>
+    <p><%= project.title %><p>
+  <% end %>
+
   <p>Submitted by: <%= project.user.fname %></p>
 
 <% end %>

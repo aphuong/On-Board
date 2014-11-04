@@ -27,4 +27,8 @@ Rails.application.routes.draw do
   patch 'user/update_password' => 'users#update_password'
   patch 'user/:id/edit' => 'users#update'
 
+
+  get 'projects' => 'projects#index'
+  get 'user/:id/project/new' => 'projects#new', :as => 'new_project'
+  post '/projects' => 'projects#create'
 end

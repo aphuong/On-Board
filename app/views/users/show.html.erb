@@ -19,7 +19,6 @@
       </div>
     </div>
 
-
     <%= link_to "https://github.com/#{@user.github_username}" do %>
       <span class="social-icon"><i class="fa fa-github-square"></i></span>
     <% end %>
@@ -111,7 +110,16 @@
         </p>
       </div>
     </div>
+  </div>
 
+
+  <div class="projects-container">
+    <h4><%= "#{@user.fname}'s Projects" %></h4>
+    <% @user.projects.each do |project| %>
+      <%= link_to project.project_url do %>
+        <p><%= project.title %><p>
+      <% end %>
+    <% end %>
   </div>
 
 </div>

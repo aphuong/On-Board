@@ -2,6 +2,107 @@
   margin: 20px;
 }
 
+// sign-in page
+
+.cover {
+  width: 100%;
+  height: 100vh;
+  display: table;
+  background-color: $turquoise;
+}
+
+.cover-content-wrapper {
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 1em;
+  margin: 0 auto;
+  max-width: 50em;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 300px;
+  -webkit-animation-name: bounceInDown;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  display: inline-block;
+  max-width: 50%;
+  box-sizing: border-box;
+}
+
+@-webkit-keyframes bounceInDown {
+  0% { 
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px)
+  }
+  60% {
+    opacity:1;
+    -webkit-transform: translateY(1em);
+    transform: translateY(1em)
+  }
+  80% {
+    -webkit-transform: translateY(-0.5em);
+    transform: translateY(-0.5em);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  box-sizing: border-box;
+  font-weight: 300;
+  font-size: 2.5em;
+  color: #444;
+  line-height: 1;
+  text-transform: none;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+.reveal {
+  -webkit-animation-name: reveal;
+  -webkit-animation-delay: 1.5s;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-duration: 1.11s;
+  display: inline-block;
+  text-indent: -20em;
+  box-sizing: border-box;
+  font-weight: 300;
+  line-height: 1;
+  font-size: 1.5em;
+  color: #444;
+}
+
+@-webkit-keyframes reveal {
+  0% {
+    text-indent: -20em;
+    opacity: 0
+  }
+  50% {
+    text-indent: 0;
+    opacity: 1;
+  }
+  100% {
+    text-indent: 0;
+    opacity: 1
+  }
+}
 
 // profile show page:
 

@@ -1,4 +1,4 @@
-<h1>Admins page</h1>
+<h1>ADMINS DASHBOARD</h1>
 
 <p>This page has forms/interfaces that allow admins to add students, email group, make announcements, and edit checklists.</p>
 
@@ -6,7 +6,7 @@
   <%= form_for @announcement do |f| %>
     <%= f.label :body, "Announcement" %><br>
     <%= f.text_area :body %><br>
-    <%= f.submit %>
+    <span class="admins-btn"><%= f.submit %></span>
   <% end %>
 
 
@@ -17,7 +17,7 @@
 
     <div class="edit-announcement">
       <ul>
-        <li class="fa fa-pencil"><%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id) %> | <%= link_to "Delete", announcement_path(announcement.id), method: :delete %></li>
+        <li class="fa fa-pencil"><%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id) %>  <span class="delete"><%= link_to "Delete", announcement_path(announcement.id), method: :delete %></span></li>
       </ul>
     </div>
 
@@ -33,7 +33,7 @@
 <%= form_for @todo do |f| %>
   <%= f.label :body, "List item" %><br>
   <%= f.text_field :body %><br>
-  <%= f.submit %>
+  <span class="admins-btn"><%= f.submit %></span>
 <% end %>
 
 <div class="checklist">
@@ -43,7 +43,7 @@
   <% @todos.each do |todo| %>
     <div class="edit-checklist">
       <ul>
-        <li class="fa fa-pencil"><%= best_in_place todo, :body, as: :input, url: todo_path(todo.id) %> | <%= link_to "Delete", todo_path(todo.id), method: :delete %></li>
+        <li class="fa fa-pencil"><%= best_in_place todo, :body, as: :input, url: todo_path(todo.id) %>  <span class="delete"><%= link_to "Delete", todo_path(todo.id), method: :delete %></span></li>
       </ul>
     </div>
 

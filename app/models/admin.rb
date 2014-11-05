@@ -4,4 +4,6 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   include DeviseInvitable::Inviter
+
+  has_many :invitations, :class_name => 'User', :as => :invited_by
 end

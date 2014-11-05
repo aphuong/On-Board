@@ -2,6 +2,12 @@ class InvitationsController < Devise::InvitationsController
 
   before_filter :update_sanitized_params, only: :update
 
+  def new 
+    @user = User.new
+    @users_confirmed = User.where('invitation_token IS NULL')
+    @users = User.where('invitation_token IS NOT NULL')
+  end
+
   def update
     respond_to do |format|
       format.js do

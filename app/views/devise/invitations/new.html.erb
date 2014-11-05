@@ -1,6 +1,6 @@
 <h2><%= t "devise.invitations.new.header" %></h2>
 
-<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+<%= form_for @user, :url => user_invitation_path, :html => {:method => :post} do |f| %>
   <%= devise_error_messages! %>
 
 <% resource.class.invite_key_fields.each do |field| -%>
@@ -9,4 +9,18 @@
 <% end -%>
 
   <p><%= f.submit t("devise.invitations.new.submit_button") %></p>
+<% end %>
+
+<h2>Email Sent</h2>
+<% @users.each do |user| %>
+    <ul>
+      <li><%= user.email %></li>
+    </ul>
+<% end %>
+
+<h2>Invitation Accepted</h2>
+<% @users_confirmed.each do |user| %>
+  <ul>
+    <li><%= user.email %></li>
+  </ul>
 <% end %>

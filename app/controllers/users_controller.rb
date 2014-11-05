@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-
+  
   def home
   end
 
   def index
     @users = User.all
     @announcements = Announcement.all
+    @hexes = Hex.all
   end
 
   def show
@@ -39,8 +40,13 @@ class UsersController < ApplicationController
     end
   end
 
- 
+  def create_hex
+    @user = User.create(user_params)
+    Hex.create(user_id: @user.id)
+    render "show"
+  end
 
+ 
   private
 
   def user_params

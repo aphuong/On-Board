@@ -83,7 +83,6 @@ $(document).ready(function() {
     $(this).hide();
   });
 
-
   $(".check-btn").on('click', function(){
     item = $(this)
     params = { id: item.data("id") }
@@ -100,5 +99,9 @@ $(document).ready(function() {
     });
   });
 
+  $(window).load(function(){
+    $(".hex-container").fadeIn(800);
+    $(".hex-container2").fadeIn(1600);
+  });
 
 });

@@ -1,8 +1,11 @@
-<nav>
-  <ul>
-    <li><%= link_to "Home", authenticated_user_path %> |</li>
-    <li><%= link_to "Add Project", new_project_path(current_user) %> |</li>
-    <li><%= link_to "Edit Account", edit_user_path(current_user) %> |</li>
-    <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-  </ul>
-</nav>
+<div class="wrapper">
+  <div class="welcome-name"><%= link_to "Welcome to NYCDA #{current_user.fname}!", show_user_path(current_user) %></div>
+  <nav>
+    <ul>
+      <li><%= link_to "Home", authenticated_user_path %> |</li>
+      <li><%= link_to "Add Project", new_project_path(current_user) %> |</li>
+      <li><%= link_to "Edit Account", edit_user_path(current_user) %> |</li>
+      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  </nav>
+</div>

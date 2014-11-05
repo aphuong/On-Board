@@ -1,8 +1,14 @@
 nav {
+  display: inline-block;
   text-align: right;
 
   li {
     list-style: none;
     display: inline-block;
   }
+}
+
+.welcome-name {
+  display: inline-block;
+  width: 69%;
 }

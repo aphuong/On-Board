@@ -1,11 +1,18 @@
 body {
   font-family: $font-stack;
   font-size: $normal;
+  width: 100%;
 }
 
 a {
   text-decoration: none;
 }
+
+.wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
 
 
 // move to todos page

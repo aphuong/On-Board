@@ -125,11 +125,21 @@
 <% if current_user?(@user) || current_admin?(@admin) %>
   <div class="checklist-container">
     <h2>Checklist</h2>
-    <% @todos.each do |todo| %>
-      <ul class="line-item">
-        <li><span class="check-btn"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %></li>
-      </ul>
-    <% end %>
+    <ul>
+      <% @todos.each do |todo| %>
+        <% if UserTodo.where(user_id: current_user.id, todo_id: todo.id).any? %>
+          <li class="line-item color">
+            <span class="undo-btn" data-id="<%= todo.id %>">undo</span>
+
+            <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
+          </li>
+        <% else %>
+           <li class="line-item">
+            <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
   </div>
 <% end %>
 </div>

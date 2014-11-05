@@ -1,3 +1,11 @@
+input[type=submit] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+}
+
 .sign-in-btn {
   background-color: $red-orange;
 }
@@ -19,6 +27,7 @@
   transition-property: all;
   transition-duration: .3s;
   color: $red-orange;
+  appearance: none;
   border: 2px solid $red-orange;
   a {
     color: $red-orange;

@@ -7,4 +7,20 @@
   display: none;
 }
 
-
+.admins-btn {
+  width: 64.016px;
+  height: 32px;
+  line-height: 30px;
+  vertical-align: middle;
+  padding: 0 25.6px;
+  font-weight: 300;
+  font-family: $font-stack;
+  border-radius: 50px;
+  transition-property: all;
+  transition-duration: .3s;
+  color: $red-orange;
+  border: 2px solid $red-orange;
+  a {
+    color: $red-orange;
+  }
+}

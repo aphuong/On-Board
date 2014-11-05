@@ -37,10 +37,24 @@ class TodosController < ApplicationController
     redirect_to admins_dashboard_path
   end
 
+  def checked 
+    if UserTodo.create(todo_id: params[:id], user_id: current_user.id)
+      render json: @todo
+    end
+  end
+
+  def unchecked
+    @todo = UserTodo.where(user_id: current_user.id, todo_id: params[:id])
+    if @todo
+      @todo.destroy_all
+      render json: @todo
+    end
+  end
+
   private
 
     def todos_params
-      params.require(:todo).permit(:body)
+      params.require(:todo).permit(:body, :id)
     end
 
     def set_todo

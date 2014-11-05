@@ -83,9 +83,22 @@ $(document).ready(function() {
     $(this).hide();
   });
 
-  $(".check-btn").on('click', function() {
-    $(this).closest(".line-item").css({
-      'background-color': '#E7542C',
+
+  $(".check-btn").on('click', function(){
+    item = $(this)
+    params = { id: item.data("id") }
+    $.get('/todos/checked', params, function(data) {
+      item.closest(".line-item").addClass('color');
     });
   });
+
+  $(".undo-btn").on('click', function(){
+    item = $(this)
+    params = { id: item.data("id") }
+    $.get('/todos/unchecked', params, function(data) {
+      item.closest(".line-item").removeClass('color');
+    });
+  });
+
+
 });

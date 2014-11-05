@@ -8,5 +8,6 @@ class User < ActiveRecord::Base
   gravtastic
   
   has_many :projects
-
+  has_many :user_todos
+  
 end

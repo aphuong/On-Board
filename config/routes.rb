@@ -32,4 +32,7 @@ Rails.application.routes.draw do
   get 'projects' => 'projects#index'
   get 'user/:id/project/new' => 'projects#new', :as => 'new_project'
   post '/projects' => 'projects#create'
+
+  get 'todos/checked' => 'todos#checked'
+  get 'todos/unchecked' => 'todos#unchecked'
 end

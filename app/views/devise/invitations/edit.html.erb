@@ -1,5 +1,8 @@
-<h2><%= t 'devise.invitations.edit.header' %></h2>
-
+<div class="wrapper">
+  <div class="sign-up-wrapper">
+  <div class="sign-up-content">
+<h1>Welcome to WDI Sept &#39; 14</h1>
+<h2>Please create your profile</h2>
 <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
 
   <div>
@@ -43,3 +46,6 @@
 
   <p><%= f.submit t("devise.invitations.edit.submit_button") %></p>
 <% end %>
+  </div>
+  </div>
+</div>

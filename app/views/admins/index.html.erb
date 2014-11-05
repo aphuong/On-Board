@@ -1,8 +1,6 @@
 <h1>ADMINS DASHBOARD</h1>
 
-<p>This page has forms/interfaces that allow admins to add students, email group, make announcements, and edit checklists.</p>
-
-<div class="announcements">
+<div class="announcements-form">
   <%= form_for @announcement do |f| %>
     <%= f.label :body, "Announcement" %><br>
     <%= f.text_area :body %><br>
@@ -17,7 +15,7 @@
 
     <div class="edit-announcement">
       <ul>
-        <li class="fa fa-pencil"><%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id) %>  <span class="delete"><%= link_to "Delete", announcement_path(announcement.id), method: :delete %></span></li>
+        <li class="fa fa-pencil">  <%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id) %>  <span class="delete"><%= link_to "Delete", announcement_path(announcement.id), method: :delete %></span></li>
       </ul>
     </div>
 

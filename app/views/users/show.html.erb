@@ -1,5 +1,4 @@
 <div class="wrapper">
-  <p>This should show user's profile</p>
 
   <% if current_admin %>
   <span class="admins-btn"><%= link_to "Admins Dashboard", admins_dashboard_path %></span>
@@ -14,136 +13,134 @@
     </span>
   </h3>
 
-  <div class="column">
-
-    <div>
+  <div class="column left">
+    <div class="profile-image">
       <%= image_tag @user.gravatar_url(default: "wavatar", :size => 200 ) %>
       <div>Edit profile image at:<br />
-        <a href="https://en.gravatar.com/" target="_blank">Gravatar.com</a>.
+        <a href="https://en.gravatar.com/" target="_blank">Gravatar.com</a>
+      </div>
+   
+      <div class="social">
+        <%= link_to "https://github.com/#{@user.github_username}" do %>
+          <span class="social-icon"><i class="fa fa-github-square"></i></span>
+        <% end %>
+
+        <%= link_to "http://#{@user.tumblr_username}.tumblr.com" do %>
+          <span class="social-icon"><i class="fa fa-tumblr-square"></i></span>
+        <% end %>
+
+        <%= link_to "https://twitter.com/#{@user.twitter_username}" do %>
+          <span class="social-icon"><i class="fa fa-twitter-square"></i></span>
+        <% end %>
+
+        <%= link_to "https://www.linkedin.com/in/#{@user.linkedin_username}"  do %>
+          <span class="social-icon"><i class="fa fa-linkedin-square"></i></span>
+        <% end %>
       </div>
     </div>
 
-    <%= link_to "https://github.com/#{@user.github_username}" do %>
-      <span class="social-icon"><i class="fa fa-github-square"></i></span>
-    <% end %>
-
-    <%= link_to "http://#{@user.tumblr_username}.tumblr.com" do %>
-      <span class="social-icon"><i class="fa fa-tumblr-square"></i></span>
-    <% end %>
-
-    <%= link_to "https://twitter.com/#{@user.twitter_username}" do %>
-      <span class="social-icon"><i class="fa fa-twitter-square"></i></span>
-    <% end %>
-
-    <%= link_to "https://www.linkedin.com/in/#{@user.linkedin_username}"  do %>
-      <span class="social-icon"><i class="fa fa-linkedin-square"></i></span>
-    <% end %>
-  </div>
-
-
-  <div class="column">
-
     <% if current_user?(@user) %>
-      <span class="edit-btn">Edit</span>
-      <span class="done-btn">Done editing</span>
+      <div class="edit-wrapper"><span class="edit-btn">Edit</span></div>
+      <div class="edit-wrapper"><span class="done-btn">Done editing</span></div>
     <% end %>
 
     <div class="edit-container">
       <div>
         <span class="icon"><i class="fa fa-pencil"></i></span>
-        <%= best_in_place @user, :fname, as: :input, url: edit_user_path(@user) %>
+        <%= best_in_place @user, :fname, as: :input, url: edit_user_path(@user), class: "bip" %>
       </div>
 
       <div>
         <span class="icon"><i class="fa fa-pencil"></i></span>
-        <%= best_in_place @user, :lname, as: :input, url: edit_user_path(@user) %>
+        <%= best_in_place @user, :lname, as: :input, url: edit_user_path(@user), class: "bip"%>
       </div>
 
       <div>
-        <h4>Location:</h4>
+        <p>LOCATION:</p>
         <span class="icon"><i class="fa fa-pencil"></i></span>
-        <%= best_in_place @user, :location, as: :input, url: edit_user_path(@user) %>
+        <%= best_in_place @user, :location, as: :input, url: edit_user_path(@user), class: "bip" %>
       </div>
 
       <div>
-        <h4>Fun Fact About Me:</h4>
+        <p>FUN FACT ABOUT ME:</p>
         <span class="icon"><i class="fa fa-pencil"></i></span>
-        <%= best_in_place @user, :fun_fact, as: :textarea, url: edit_user_path(@user) %>
+        <%= best_in_place @user, :fun_fact, as: :textarea, url: edit_user_path(@user), class: "bip" %>
       </div>
 
       <div>
-        <h4>Goals:</h4>
+        <p>GOAL:</p>
         <span class="icon"><i class="fa fa-pencil"></i></span>
-        <%= best_in_place @user, :goal, as: :textarea, url: edit_user_path(@user) %>
+        <%= best_in_place @user, :goal, as: :textarea, url: edit_user_path(@user), class: "bip" %>
       </div>
 
       <div>
-        <h4>Prior Experience:</h4>
+        <p>PRIOR EXPERIENCE:</p>
         <span class="icon"><i class="fa fa-pencil"></i></span>
-        </i><%= best_in_place @user, :pre_wdi, as: :textarea, url: edit_user_path(@user) %>
+        </i><%= best_in_place @user, :pre_wdi, as: :textarea, url: edit_user_path(@user), class: "bip" %>
       </div>
     </div>
 
 
     <div class="profile-container">
       <div>
-        <h4>Location:</h4>
         <p class="update-from-bip", data-name="location">
+          <strong>Location: </strong>
           <%= @user.location %>
         </p>
       </div>
 
       <div>
-        <h4>Fun Fact About Me:</h4>
         <p class="update-from-bip", data-name="fun_fact">
+          <strong>Fun Fact About Me: </strong>
           <%= @user.fun_fact %>
         </p>
       </div>
 
       <div>
-        <h4>Goals:</h4>
         <p class="update-from-bip", data-name="goal">
+          <strong>Goals:</strong>
           <%= @user.goal %>
         </p>
       </div>
 
       <div>
-        <h4>Prior Experience:</h4>
         <p class="update-from-bip", data-name="pre_wdi">
+          <strong>Prior Experience:</strong>
           <%= @user.pre_wdi %>
         </p>
       </div>
     </div>
   </div>
 
-
-  <div class="projects-container">
-    <h4><%= "#{@user.fname}'s Projects" %></h4>
-    <% @user.projects.each do |project| %>
-      <%= link_to project.project_url do %>
-        <p><%= project.title %><p>
-      <% end %>
-    <% end %>
-  </div>
-
-<% if current_user?(@user) || current_admin %>
-  <div class="checklist-container">
-    <h2>Checklist</h2>
-    <ul>
-      <% @todos.each do |todo| %>
-        <% if UserTodo.where(user_id: current_user.id, todo_id: todo.id).any? %>
-          <li class="line-item color">
-            <span class="undo-btn" data-id="<%= todo.id %>">undo</span>
-
-            <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
-          </li>
-        <% else %>
-           <li class="line-item">
-            <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
-          </li>
+  <div class="column right">
+    <div class="projects-container">
+      <%= "#{@user.fname}'s Projects" %>
+      <% @user.projects.each do |project| %>
+        <%= link_to project.project_url do %>
+          <p><%= project.title %><p>
         <% end %>
       <% end %>
-    </ul>
+    </div>
+
+  <% if current_user?(@user) || current_admin %>
+    <div class="checklist-container">
+      <h2>Checklist</h2>
+      <ul>
+        <% @todos.each do |todo| %>
+          <% if UserTodo.where(user_id: current_user.id, todo_id: todo.id).any? %>
+            <li class="line-item color">
+              <span class="undo-btn" data-id="<%= todo.id %>">undo</span>
+
+              <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
+            </li>
+          <% else %>
+             <li class="line-item">
+              <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   </div>
-<% end %>
-</div>
+</div

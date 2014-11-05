@@ -9,5 +9,6 @@ class User < ActiveRecord::Base
   
   has_many :projects
   has_many :user_todos
-  
+  has_one :hex
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105015927) do
+ActiveRecord::Schema.define(version: 20141105052959) do
 
   create_table "admins", force: true do |t|
     t.string   "fname"
@@ -57,6 +57,14 @@ ActiveRecord::Schema.define(version: 20141105015927) do
   end
 
   add_index "announcements", ["admin_id"], name: "index_announcements_on_admin_id"
+
+  create_table "hexes", force: true do |t|
+    t.string   "image_url"
+    t.integer  "user_id"
+    t.string   "background_color"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "projects", force: true do |t|
     t.integer  "user_id"

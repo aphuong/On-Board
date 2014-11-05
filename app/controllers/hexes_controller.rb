@@ -1,0 +1,5 @@
+class HexesController < ApplicationController
+
+ 
+
+end

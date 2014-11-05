@@ -1,58 +1,54 @@
-<p>User's index: perhaps this can have a list of all students, announcements, the countdown, the feed..</p>
+<h3>Welcome to NYCDA, <%= current_user.fname %></h3>
 
-<% @announcements.last(1).each do |announcement| %>
-  <p class="announcements"><%= announcement.body %></p>
-<% end %>
+<div class="announcement-container">
+  <% @announcements.last(1).each do |announcement| %>
+    <h3 class="announcements"><%= announcement.body %></h3>
+  <% end %>
+</div>
 
-<h1>Welcome: <%= current_user.fname %></h1>
+<div class="index-wrapper">
 
-<h3>List of All WDI Students:</h3>
+<h3 class="hex-title">September 2014 WDI Students:</h3>
 
-
-<!-- hex -->
-
-<% @users.each do |user| %>
-  <div class="hex-container">
-    <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
-    <%= render 'users/hex' %>
+<section class="hex-section">
+  <div>
+    <% @users.first(4).each do |user| %>
+      <div class="hex-container">
+        <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
+        <%= render 'users/hex' %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</section>
+
+<section class="hex-section">
+  <div>
+    <% @users.last(5).each do |user| %>
+      <div class="hex-container2">
+        <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
+        <%= render 'users/hex' %>
+      </div>
+    <% end %>
+  </div>
+</section>
+  
 
 
-
-
-<!---->
 
 <!-- <div class="hex-wrapper">
-  <div class="row">
-    <div class="row-one">
-      <div class="col-4 hex-1"></div>
-      <div class="col-4 hex-2"></div>
-      <div class="col-4 hex-3"></div>
-    <div>
+  <% @hexes.shuffle.each do |hex| %>
+    <div class="hex-container">
+      <% if hex.user_id %>
+        <span class="text"><%= link_to hex.user_id, show_user_path(hex.user_id)%></span>
+        <%= render 'users/hex' %>
+      <% else %>
+        <span class="text"><%= image_tag(hex.image_url) %></span>
+        <%= render 'users/hex' %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+ -->
+</div>
 
-    <div class="row-two">
-      <div class="col-4 hex-1"></div>
-      <div class="col-4 hex-2"></div>
-      <div class="col-4 hex-3"></div>
-    <div>
 
-    <div class="row-three">
-      <div class="col-4 hex-1"></div>
-      <div class="col-4 hex-2"></div>
-      <div class="col-4 hex-3"></div>
-    <div>
-
-    <div class="row-four">
-      <div class="col-4 hex-1"></div>
-      <div class="col-4 hex-2"></div>
-      <div class="col-4 hex-3"></div>
-    <div>
-
-    <div class="row-five">
-      <div class="col-4 hex-1"></div>
-      <div class="col-4 hex-2"></div>
-      <div class="col-4 hex-3"></div>
-    <div>
-  </div>
-</div> -->

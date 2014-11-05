@@ -1,6 +1,10 @@
 <div class="wrapper">
   <p>This should show user's profile</p>
 
+  <% if current_admin %>
+  <span class="admins-btn"><%= link_to "Admins Dashboard", admins_dashboard_path %></span>
+  <% end %>
+
   <h3 class="username">
     <span class="update-from-bip", data-name="fname">
       <%= @user.fname %>
@@ -122,7 +126,7 @@
     <% end %>
   </div>
 
-<% if current_user?(@user) || current_admin?(@admin) %>
+<% if current_user?(@user) || current_admin %>
   <div class="checklist-container">
     <h2>Checklist</h2>
     <% @todos.each do |todo| %>

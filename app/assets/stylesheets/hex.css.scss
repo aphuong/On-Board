@@ -48,7 +48,9 @@
   transform: rotate(60deg);
 }
 
-.row {  
+.row { 
+  display: none;
+
   .hex-1, 
   .hex-2, 
   .hex-3 {
@@ -73,9 +75,8 @@
   }
 }
 
-.hex-container-1, .hex-container-3 {
+.hex-container.one, .hex-container.three {
   position: relative;
-  display: none;
 
   &:nth-of-type(1) {
     left: 100px;
@@ -94,9 +95,8 @@
   }
 }
 
-.hex-container-2 {
+.hex-container.two {
   position: relative;
-  display: none;
 
   &:nth-of-type(1) {
     left: 0px;
@@ -116,5 +116,19 @@
 
   &:nth-of-type(5) {
     left: 800px;
+  }
+}
+
+.hex-container .row div {
+  &:nth-child(odd) {
+    background: rgba(100, 185, 0, .4);
+  }
+
+  &:nth-child(even) {
+    background: rgba(0, 150, 255, .2);
+  }
+
+  &:nth-child(3n+0) {
+    background: rgba(255, 100, 0, .2);
   }
 }

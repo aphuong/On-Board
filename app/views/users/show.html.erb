@@ -151,11 +151,11 @@
           <% else %>
 
             <% if current_admin %>
+              <p>Completed tasks:</p>
               <% @usertodos.each do |usertodo| %>
                 <li class="line-item color"><%= usertodo.todo.body %></li>
               <% end %>
             <% end %>
-
           <% end %>
         <% end %>
       </ul>

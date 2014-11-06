@@ -13,7 +13,7 @@
   <section class="hex-section">
     <div>
       <% @hex_group_1.each do |user| %>
-        <div class="hex-container-1">
+        <div class="hex-container one">
           <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
           <%= render 'users/hex' %>
         </div>
@@ -24,7 +24,7 @@
   <section class="hex-section">
     <div>
       <% @hex_group_2.each do |user| %>
-        <div class="hex-container-2">
+        <div class="hex-container two">
           <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
           <%= render 'users/hex' %>
         </div>
@@ -35,7 +35,7 @@
   <section class="hex-section">
     <div>
       <% @hex_group_3.each do |user| %>
-        <div class="hex-container-3">
+        <div class="hex-container three">
           <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
           <%= render 'users/hex' %>
         </div>

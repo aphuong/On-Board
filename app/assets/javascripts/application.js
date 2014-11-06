@@ -100,10 +100,10 @@ $(document).ready(function() {
   });
 
   $(window).load(function(){
-    $(".hex-container-1").fadeIn(800);
-    $(".hex-container-2").fadeIn(1600);
-    $(".hex-container-3").fadeIn(2400);
-    // $(".hex-container-4").fadeIn(3200);
+    $(".hex-container .row").each(function(i) {
+      fade_time = (i + 1) * 400
+      $(this).fadeIn(fade_time);
+    });
   });
 
 });

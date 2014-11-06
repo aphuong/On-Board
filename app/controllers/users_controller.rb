@@ -4,13 +4,15 @@ class UsersController < ApplicationController
   end
 
   def index
+    t = twitter_client
+    @tweets = t.user_timeline('NYCodeDesign', {:count => 2})
+
     @users = User.all.to_a
     @hex_group_1 = @users.shift(4)
     @hex_group_2 = @users.shift(5)
     @hex_group_3 = @users.shift(4)
 
     @announcements = Announcement.all
-    # @hexes = Hex.all
   end
 
   def show

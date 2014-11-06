@@ -1,3 +1,40 @@
 .user-sign-in-form {
   display: none;
+  width: 40%;
+  z-index: 1;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding-top: 20px;
+  border-radius: 4px;
+  background: rgba(237, 236, 230, 1);
 }
+
+#user-password {
+  margin-bottom: 10px;
+}
+
+.email-input, .password-input {
+  width: 300px;
+}
+
+
+// btn
+
+.user-login-btn {
+  line-height: 55px;
+  padding: 0 25.6px;
+  font-weight: 500;
+  font-family: $font-stack;
+  border-radius: 50px;
+  transition-property: all;
+  transition-duration: .3s;
+  color: $turquoise;
+  appearance: none;
+  border: 4px solid $turquoise;
+  a {
+    color: $turquoise;
+  }
+}
+

@@ -16,8 +16,21 @@
 //= require_tree .
 
 
-
 $(document).ready(function() {
+
+  $(".shim").on("click", function(){
+    $(this).hide();
+    $(".user-sign-in-form").hide().css("top", "50%");
+    $("body").css("overflow", "visible");
+  });
+
+  $(".sign-in-btn").click(function(event){
+    event.preventDefault();
+    $(".shim").show();
+    $(".user-sign-in-form").show().animate({ top: "90px" }, 200);
+    $("body").css("overflow", "hidden");
+    $("body").animate({ scrollTop: 0 }, 200);
+  });
 
   $(".best_in_place").best_in_place();
 
@@ -34,10 +47,6 @@ $(document).ready(function() {
       bip_element = $(".best_in_place[data-bip-attribute=" + field_name + "]")
       $(field).text(bip_element.text());
     }
-  });
-
-  $(".sign-in-btn").click(function(){
-    $(".user-sign-in-form").toggle(300);
   });
 
 
@@ -105,5 +114,7 @@ $(document).ready(function() {
       $(this).fadeIn(fade_time);
     });
   });
+
+
 
 });

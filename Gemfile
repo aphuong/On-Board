@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
@@ -36,6 +35,9 @@ gem 'best_in_place'
 
 gem 'gravtastic'
 
+gem 'twitter'
+
+gem 'twitter-text'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

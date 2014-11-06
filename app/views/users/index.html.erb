@@ -1,11 +1,14 @@
-
-<!-- <div class="announcement-container">
+<div class="announcement-container">
   <% @announcements.last(1).each do |announcement| %>
-    <h3 class="announcements"><%= announcement.body %></h3>
+    <p class="announcements"><%= announcement.body %></p>
   <% end %>
 
-  <h3 class="hex-title">September 2014 WDI Students:</h3>
-</div> -->
+  <% @tweets.each do |tweet| %>
+    <span><i class="fa fa-twitter"></i><%= twitter_text(tweet.text) %></span>
+  <% end %>
+
+  <!-- <h3 class="hex-title">September 2014 WDI Students:</h3> -->
+</div>
 
 
 <div class="index-wrapper">
@@ -45,5 +48,8 @@
   
   
 </div>
+
+
+
 
 

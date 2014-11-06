@@ -3,7 +3,7 @@
   width: 100%;
   height: 100vh;
   display: table;
-  background-color: $turquoise;
+  background-color: rgba(93, 188, 210, .4);
 }
 
 .cover-content-wrapper {
@@ -142,8 +142,8 @@
 
 .checklist-container {
   // border: 1px solid #AAA;
-  border-radius: 4px;
   background-color: rgba(200, 200, 200, 0.2);
+  border-radius: 5px;
   // background-color: rgba(253, 254, 227, 0.3);
   // background-color: rgba(231, 83, 44, 0.9);
   padding: 20px;
@@ -211,4 +211,59 @@
   width: 100%;
   text-align: right;
   margin-right: 20px;
+}
+
+// invite page
+.invite-header {
+  width: 100%;
+  height: 140px;
+}
+
+.invitation-form {
+  width: 30%;
+  margin: 0 auto;
+  display: inline-block;
+  float: left;
+}
+
+.email-header {
+  margin-left: 39px;
+}
+
+.email-sent {
+  width: 30%;
+  margin: 0 auto;
+  display: inline-block;
+  float: left;
+}
+
+.accepted-invite {
+  width: 30%;
+  margin: 0 auto;
+  display: inline-block;
+  float: left;
+}
+
+// edit user account page
+
+.account-form {
+  width: 45%;
+  float: left;
+}
+
+.profile-form {
+  width: 45%;
+  float: right;
+}
+
+.delete-form {
+  clear: both;
+}
+
+#user_current_password {
+  margin-bottom: 10px;
+}
+
+#user_linkedin_username {
+  margin-bottom: 10px;
 }

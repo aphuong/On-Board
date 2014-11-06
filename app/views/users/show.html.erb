@@ -152,15 +152,13 @@
               <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
               </li>
             <% end %>
-          <% elsif current_admin %>
-            <% if Todo.joins(:user_todos)  %>
-              <li class="line-item color">
-              <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
-              </li>
-            <% else %>
-              <li class="line-item">
-              <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
-               </li>
+          <% else %>
+
+            <% if current_admin %>
+              <p>Completed tasks:</p>
+              <% @usertodos.each do |usertodo| %>
+                <li class="line-item color"><%= usertodo.todo.body %></li>
+              <% end %>
             <% end %>
           <% end %>
         <% end %>
@@ -168,4 +166,4 @@
     </div>
   <% end %>
 </div>
-</div
+

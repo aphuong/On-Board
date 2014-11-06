@@ -100,8 +100,9 @@ $(document).ready(function() {
   });
 
   $(window).load(function(){
-    $(".hex-container").fadeIn(800);
-    $(".hex-container2").fadeIn(1600);
+    $(".hex-container-1").fadeIn(800);
+    $(".hex-container-2").fadeIn(1600);
+    $(".hex-container-3").fadeIn(2400);
   });
 
 });

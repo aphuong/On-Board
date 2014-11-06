@@ -1,5 +1,7 @@
 .index-wrapper {
-  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  width: 960px;
 }
 
 .announcements {
@@ -8,14 +10,3 @@
   width: 100%;
   background-color: #EFEFEF;
 }
-
-.hex-title {
-  text-align: center;
-}
-
-.hex-section {
-  margin-top: 100px;
-  margin-bottom: 315px;
-}
-
-

@@ -2,6 +2,26 @@
   width: 33.33333%;
 }
 
+.hex-title {
+  text-align: center;
+}
+
+.hex-section {
+  position: absolute;
+
+  &:nth-of-type(1) {
+    top: 100px;
+  }
+
+  &:nth-of-type(2) {
+    top: 274px;
+  }
+
+  &:nth-of-type(3) {
+    top: 448px;
+  }
+}
+
 .hex-1, 
 .hex-2, 
 .hex-3 {
@@ -46,18 +66,55 @@
 
   a {
     color: #fff;
+    
+    &:hover {
+      color: $light-yellow;
+    }
   }
 }
 
-.hex-container {
-  left: 215px;
+.hex-container-1, .hex-container-3 {
   position: relative;
   display: none;
+
+  &:nth-of-type(1) {
+    left: 100px;
+  }
+
+  &:nth-of-type(2) {
+    left: 300px;
+  }
+
+  &:nth-of-type(3) {
+    left: 500px;
+  }
+
+  &:nth-of-type(4) {
+    left: 700px;
+  }
 }
 
-.hex-container2 {
-  left: 194px;
+.hex-container-2 {
   position: relative;
   display: none;
-}
 
+  &:nth-of-type(1) {
+    left: 0px;
+  }
+
+  &:nth-of-type(2) {
+    left: 200px;
+  }
+  
+  &:nth-of-type(3) {
+    left: 400px;
+  }
+
+  &:nth-of-type(4) {
+    left: 600px;
+  }
+
+  &:nth-of-type(5) {
+    left: 800px;
+  }
+}

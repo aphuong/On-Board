@@ -1,53 +1,49 @@
 
-<div class="announcement-container">
+<!-- <div class="announcement-container">
   <% @announcements.last(1).each do |announcement| %>
     <h3 class="announcements"><%= announcement.body %></h3>
   <% end %>
-</div>
+
+  <h3 class="hex-title">September 2014 WDI Students:</h3>
+</div> -->
+
 
 <div class="index-wrapper">
 
-<h3 class="hex-title">September 2014 WDI Students:</h3>
-
-<section class="hex-section">
-  <div>
-    <% @users.first(4).each do |user| %>
-      <div class="hex-container">
-        <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
-        <%= render 'users/hex' %>
-      </div>
-    <% end %>
-  </div>
-</section>
-
-<section class="hex-section">
-  <div>
-    <% @users.last(5).each do |user| %>
-      <div class="hex-container2">
-        <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
-        <%= render 'users/hex' %>
-      </div>
-    <% end %>
-  </div>
-</section>
-  
-
-
-
-<!-- <div class="hex-wrapper">
-  <% @hexes.shuffle.each do |hex| %>
-    <div class="hex-container">
-      <% if hex.user_id %>
-        <span class="text"><%= link_to hex.user_id, show_user_path(hex.user_id)%></span>
-        <%= render 'users/hex' %>
-      <% else %>
-        <span class="text"><%= image_tag(hex.image_url) %></span>
-        <%= render 'users/hex' %>
+  <section class="hex-section">
+    <div>
+      <% @hex_group_1.each do |user| %>
+        <div class="hex-container-1">
+          <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
+          <%= render 'users/hex' %>
+        </div>
       <% end %>
     </div>
-  <% end %>
-</div>
- -->
+  </section>
+
+  <section class="hex-section">
+    <div>
+      <% @hex_group_2.each do |user| %>
+        <div class="hex-container-2">
+          <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
+          <%= render 'users/hex' %>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <section class="hex-section">
+    <div>
+      <% @hex_group_3.each do |user| %>
+        <div class="hex-container-3">
+          <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
+          <%= render 'users/hex' %>
+        </div>
+      <% end %>
+    </div>
+  </section>
+  
+  
 </div>
 
 

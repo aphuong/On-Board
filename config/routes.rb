@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :announcements, only: [:new, :create, :edit, :update, :destroy]
   resources :todos, only: [:new, :create, :edit, :update, :destroy]
-
+  resources :projects, only: [:new, :create, :destroy]
  
   get 'admins' => "admins#home"
   get 'admins/dashboard' => "admins#index"
@@ -27,9 +27,10 @@ Rails.application.routes.draw do
   patch 'user/:id/edit' => 'users#update'
 
 
-  get 'projects' => 'projects#index'
-  get 'user/:id/project/new' => 'projects#new', :as => 'new_project'
-  post '/projects' => 'projects#create'
+  # get '/projects/:id' => 'projects#index'
+  # get 'user/:id/project/new' => 'projects#new', :as => 'new_project'
+  # post '/projects' => 'projects#create'
+  # delete 'user/:id/projects/:id' => 'projects#destroy'
 
   get 'todos/checked' => 'todos#checked'
   get 'todos/unchecked' => 'todos#unchecked'

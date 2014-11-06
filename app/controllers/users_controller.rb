@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @todos = Todo.all
+    @project = @user.projects
   end
 
   def edit
@@ -49,7 +50,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:password, :password_confirmation, :current_password, :email, :fname, :lname, :location, :github_username, :twitter_username, :tumblr_username, :linkedin_username, :goal, :fun_fact, :pre_wdi)
+    params.require(:user).permit(:password, :password_confirmation, :current_password, :email, :fname, :lname, :location, :github_username, :twitter_username, :tumblr_username, :linkedin_username, :goal, :fun_fact, :pre_wdi, :project)
   end
 
 end

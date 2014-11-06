@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    @project = Project.find(params[:id])
   end
 
   def new
@@ -14,17 +15,23 @@ class ProjectsController < ApplicationController
 
     if @project.save
       # notice: "New project added!"
-      redirect_to projects_path
+      redirect_to show_user_path(current_user.id)
     else
       # alert: "Please try again, something went wrong."
       render :new
     end
   end
 
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to show_user_path(current_user.id)
+  end
+
   private
 
   def project_params
-    params.require(:project).permit(:title, :project_url)
+    params.require(:project).permit(:title, :project_url, :image)
   end
 
 end

@@ -12,7 +12,7 @@
 
   <section class="hex-section">
     <div>
-      <% @users.first(4).each do |user| %>
+      <% @hex_group_1.each do |user| %>
         <div class="hex-container-1">
           <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
           <%= render 'users/hex' %>
@@ -23,7 +23,7 @@
 
   <section class="hex-section">
     <div>
-      <% @users.last(5).each do |user| %>
+      <% @hex_group_2.each do |user| %>
         <div class="hex-container-2">
           <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
           <%= render 'users/hex' %>
@@ -34,7 +34,7 @@
 
   <section class="hex-section">
     <div>
-      <% @users.first(4).each do |user| %>
+      <% @hex_group_3.each do |user| %>
         <div class="hex-container-3">
           <span class="text"><%= link_to user.fname, show_user_path(user) %></span>
           <%= render 'users/hex' %>
@@ -43,18 +43,7 @@
     </div>
   </section>
   
+  
 </div>
 
-<!-- <div class="hex-wrapper">
-  <% @hexes.shuffle.each do |hex| %>
-    <div class="hex-container">
-      <% if hex.user_id %>
-        <span class="text"><%= link_to hex.user_id, show_user_path(hex.user_id)%></span>
-        <%= render 'users/hex' %>
-      <% else %>
-        <span class="text"><%= image_tag(hex.image_url) %></span>
-        <%= render 'users/hex' %>
-      <% end %>
-    </div>
-  <% end %>
-</div> -->
+

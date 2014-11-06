@@ -1,3 +1,4 @@
+<div class="wrapper">
 <h1>ADMINS DASHBOARD</h1>
 
 <div class="announcements-form">
@@ -11,6 +12,7 @@
   <a href="#" id="edit-announcement-btn">Edit</a>
   <a href="#" id="done-announcement-btn">Done editing</a>
 
+  <div class="announcement-board">
   <% @announcements.each do |announcement| %>
 
     <div class="edit-announcement">
@@ -27,6 +29,7 @@
 
   <% end %>
 </div>
+</div>
 
 <%= form_for @todo do |f| %>
   <%= f.label :body, "List item" %><br>
@@ -41,7 +44,7 @@
   <% @todos.each do |todo| %>
     <div class="edit-checklist">
       <ul>
-        <li class="fa fa-pencil"><%= best_in_place todo, :body, as: :input, url: todo_path(todo.id) %>  <span class="delete"><%= link_to "Delete", todo_path(todo.id), method: :delete %></span></li>
+        <li class="fa fa-pencil">  <%= best_in_place todo, :body, as: :input, url: todo_path(todo.id) %>  <span class="delete">  <%= link_to "Delete", todo_path(todo.id), method: :delete %></span></li>
       </ul>
     </div>
 
@@ -64,3 +67,4 @@
 <%= link_to "Sign-out", destroy_admin_session_path, method: :delete %>
 
 <%= link_to "Send invite", new_user_invitation_path %>
+</div>

@@ -1,69 +1,61 @@
 <div class="wrapper">
-<div class="admins-header">
-  <h1><span class="dashboard">ADMIN DASHBOARD<span></h1>
 
-  <div class="nav-btns">
-
-    <span class="admins-btn"><%= link_to "Send invite", new_user_invitation_path %></span>
-    <span class="admins-btn"><%= link_to "Sign-out", destroy_admin_session_path, method: :delete %></span>
-
+  <div class="admins-header">
+    <h1><span class="dashboard">ADMIN DASHBOARD<span></h1>
+    <div class="nav-btns">
+      <span class="admins-btn"><%= link_to "Send invite", new_user_invitation_path %></span>
+      <span class="admins-btn"><%= link_to "Sign-out", destroy_admin_session_path, method: :delete %></span>
+    </div>
   </div>
-</div>
 
-<div class="announcements-form">
-  <%= form_for @announcement do |f| %>
-    <%= f.label :body, "Announcement" %><br>
-    <%= f.text_area :body %><br>
+  <div class="announcements-form">
+    <%= form_for @announcement do |f| %>
+      <%= f.label :body, "Announcement" %><br>
+      <%= f.text_area :body %><br>
+      <span class="admins-btn"><%= f.submit %></span>
+    <% end %>
+
+
+    <a href="#" id="edit-announcement-btn">Edit</a>
+    <a href="#" id="done-announcement-btn">Done editing</a>
+
+    <div class="announcement-board">
+      <% @announcements.each do |announcement| %>
+        <ul>
+          <div class="edit-announcement">
+            <li class="fa fa-pencil">  <%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id) %>  <span class="delete"><%= link_to "Delete", announcement_path(announcement.id), method: :delete %></span></li>
+          </div>
+
+          <div class="announcement-container">
+            <li><%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id) %></li>
+          </div>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+
+  <%= form_for @todo do |f| %>
+    <%= f.label :body, "List item" %><br>
+    <%= f.text_field :body %><br>
     <span class="admins-btn"><%= f.submit %></span>
   <% end %>
 
+  <div class="checklist">
+    <a href="#" id="edit-checklist-btn">Edit</a>
+    <a href="#" id="done-checklist-btn">Done editing</a>
 
-  <a href="#" id="edit-announcement-btn">Edit</a>
-  <a href="#" id="done-announcement-btn">Done editing</a>
-
-  <div class="announcement-board">
-  <% @announcements.each do |announcement| %>
-
-    <div class="edit-announcement">
+    <% @todos.each do |todo| %>
       <ul>
-        <li class="fa fa-pencil">  <%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id) %>  <span class="delete"><%= link_to "Delete", announcement_path(announcement.id), method: :delete %></span></li>
+        <div class="edit-checklist">
+          <li class="fa fa-pencil">  <%= best_in_place todo, :body, as: :input, url: todo_path(todo.id) %>  <span class="delete">  <%= link_to "Delete", todo_path(todo.id), method: :delete %></span></li>
+        </div>
+
+        <div class="checklist-container">
+          <li><%= best_in_place todo, :body, as: :input, url: todo_path(todo.id) %></li>
+        </div>
       </ul>
-    </div>
-
-    <div class="announcement-container">
-      <ul>
-        <li><%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id) %></li>
-      </ul>
-    </div>
-
-  <% end %>
-</div>
-</div>
-
-<%= form_for @todo do |f| %>
-  <%= f.label :body, "List item" %><br>
-  <%= f.text_field :body %><br>
-  <span class="admins-btn"><%= f.submit %></span>
-<% end %>
-
-<div class="checklist">
-  <a href="#" id="edit-checklist-btn">Edit</a>
-  <a href="#" id="done-checklist-btn">Done editing</a>
-
-  <% @todos.each do |todo| %>
-    <div class="edit-checklist">
-      <ul>
-        <li class="fa fa-pencil">  <%= best_in_place todo, :body, as: :input, url: todo_path(todo.id) %>  <span class="delete">  <%= link_to "Delete", todo_path(todo.id), method: :delete %></span></li>
-      </ul>
-    </div>
-
-    <div class="checklist-container">
-      <ul>
-        <li><%= best_in_place todo, :body, as: :input, url: todo_path(todo.id) %></li>
-      </ul>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
   <div class="students-list">
     <hr>
@@ -72,10 +64,6 @@
         <p class="profile-list"><%= link_to user.fname, show_user_path(user)  %></p>
 
     <% end %>
+  </div>
 
-</div>
-
-<%= link_to "Sign-out", destroy_admin_session_path, method: :delete %>
-
-<%= link_to "Send invite", new_user_invitation_path %>
 </div>

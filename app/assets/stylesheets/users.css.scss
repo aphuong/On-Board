@@ -186,20 +186,21 @@
 }
 
 .sign-up-content {
+  width: 100%;
   vertical-align: middle;
   padding: 0 1em;
   margin: 0 auto;
   color: #FFF;
 }
 
-.profile-form {
+.sign-up-profile-form {
   width: 40%;
   float: left;
   margin-left: 85px;
 }
 
-.password-form {
-  width: 40%;
+.sign-up-password-form {
+  width: 35%;
   float: right;
   margin-top: 73px;
 }

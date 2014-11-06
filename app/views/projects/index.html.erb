@@ -7,6 +7,9 @@
     <p><%= project.title %><p>
   <% end %>
 
+  <%= image_tag project.image_url(:thumb).to_s %>
+
   <p>Submitted by: <%= project.user.fname %></p>
 
+  <p><%= link_to "Delete", projects_path(project), method: :delete %></p>
 <% end %>

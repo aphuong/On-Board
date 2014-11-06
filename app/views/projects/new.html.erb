@@ -1,9 +1,16 @@
-<p>Share a project</p>
+<div class="wrapper">
 
-<%= form_for @project do |f| %>
+<h1>Share a project</h1>
+
+<div class="upload-form">
+<%= form_for @project, :html => { :multipart => true } do |f| %>
   <%= f.label :title, "Title" %>
-  <%= f.text_field :title,  :maxlength => 40, class: "form-control", autofocus: true, placeholder: "Project title", required: true %>
+  <%= f.text_field :title,  :maxlength => 40, class: "form-control", autofocus: true, placeholder: "Project title", required: true %><br>
   <%= f.label :project_url, "Link to your project: " %>
-  <%= f.text_field :project_url,  :maxlength => 40, class: "form-control", placeholder: "http://username.github.io/projectname/", required: true %>
-  <%= f.submit %>
+  <%= f.text_field :project_url,  :maxlength => 40, class: "form-control", placeholder: "http://username.github.io/projectname/", required: true %><br>
+  <%= f.label :image, "Add a Screenshot:" %>
+  <%= f.file_field :image %><br>
+  <span class="edit-btn"><%= f.submit %></span>
 <% end %>
+</div>
+</div>

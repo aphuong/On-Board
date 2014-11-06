@@ -1,6 +1,6 @@
 <div class="wrapper">
 <div class="admins-header">
-  <h1><span class="dashboard">ADMINS DASHBOARD<span></h1>
+  <h1><span class="dashboard">ADMIN DASHBOARD<span></h1>
 
   <div class="nav-btns">
 
@@ -14,40 +14,41 @@
   <%= form_for @announcement do |f| %>
     <%= f.label :body, "Announcement" %><br>
     <%= f.text_area :body %><br>
-    <span class="admins-btn submit"><%= f.submit %></span>
+    <span class="admins-btn"><%= f.submit %></span>
   <% end %>
 
-  <div class="announcement-board">
-    <% @announcements.each do |announcement| %>
-
-      <div class="edit-announcement">
-        <ul>
-          <li class="fa fa-pencil">  <%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id) %>  <span class="delete"><%= link_to "Delete", announcement_path(announcement.id), method: :delete %></span></li>
-        </ul>
-      </div>
-
-      <div class="announcement-container">
-        <ul>
-          <li><%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id) %></li>
-        </ul>
-      </div>
-
-    <% end %>
-
-  </div>
 
   <a href="#" id="edit-announcement-btn">Edit</a>
   <a href="#" id="done-announcement-btn">Done editing</a>
 
+  <div class="announcement-board">
+  <% @announcements.each do |announcement| %>
+
+    <div class="edit-announcement">
+      <ul>
+        <li class="fa fa-pencil">  <%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id) %>  <span class="delete"><%= link_to "Delete", announcement_path(announcement.id), method: :delete %></span></li>
+      </ul>
+    </div>
+
+    <div class="announcement-container">
+      <ul>
+        <li><%= best_in_place announcement, :body, as: :textarea, url: announcement_path(announcement.id) %></li>
+      </ul>
+    </div>
+
+  <% end %>
+</div>
 </div>
 
 <%= form_for @todo do |f| %>
   <%= f.label :body, "List item" %><br>
   <%= f.text_field :body %><br>
-  <span class="admins-btn submit"><%= f.submit %></span>
+  <span class="admins-btn"><%= f.submit %></span>
 <% end %>
 
 <div class="checklist">
+  <a href="#" id="edit-checklist-btn">Edit</a>
+  <a href="#" id="done-checklist-btn">Done editing</a>
 
   <% @todos.each do |todo| %>
     <div class="edit-checklist">
@@ -62,18 +63,19 @@
       </ul>
     </div>
   <% end %>
-  <a href="#" id="edit-checklist-btn">Edit</a>
-  <a href="#" id="done-checklist-btn">Done editing</a>
-
 </div>
 
   <div class="students-list">
     <hr>
     <% @users.each do |user| %>
-      <ul>
-        <li><%= link_to user.fname, show_user_path(user)  %></li>
-      </ul>
+
+        <p class="profile-list"><%= link_to user.fname, show_user_path(user)  %></p>
+
     <% end %>
+
 </div>
 
+<%= link_to "Sign-out", destroy_admin_session_path, method: :delete %>
+
+<%= link_to "Send invite", new_user_invitation_path %>
 </div>

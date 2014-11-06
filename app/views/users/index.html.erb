@@ -3,11 +3,12 @@
     <p class="announcements"><%= announcement.body %></p>
   <% end %>
 
-  <% @tweets.each do |tweet| %>
-    <span><i class="fa fa-twitter"></i><%= twitter_text(tweet.text) %></span>
-  <% end %>
-
-  <!-- <h3 class="hex-title">September 2014 WDI Students:</h3> -->
+  <div class="tweets">
+    <% @tweets.each do |tweet| %>
+      <span class="tweet"><i class="fa fa-twitter" id="fa-tweet"></i><%= twitter_text(tweet.text) %></span>
+    <% end %>
+  </div>
+  <h3 class="hex-title">Meet WDI Students:</h3>
 </div>
 
 

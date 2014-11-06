@@ -2,6 +2,8 @@ body {
   font-family: $font-stack;
   font-size: $normal;
   width: 100%;
+  color: #444;
+  background-color: whitesmoke;
 }
 
 a {
@@ -26,7 +28,9 @@ a {
 
 // move to todos page
 .color {
-  background-color: $red-orange;
+  background-color: rgba(93, 188, 210, .4);
+  padding: 5px;
+  border-radius: 4px;
 }
 
 .line-item {
@@ -42,6 +46,5 @@ a {
   bottom: 0;
   left: 0;
   z-index: 1;
-  background: rgba(53, 66, 66, 0.67)
-  // background: rgba(12, 13, 13, 0.67);
+  background: rgba(1, 2, 2, 0.67);
 }

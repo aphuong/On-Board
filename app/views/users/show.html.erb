@@ -39,11 +39,6 @@
     </div>
   </div>
 
-  <% if current_user?(@user) %>
-    <div class="edit-wrapper"><span class="edit-btn">Edit</span></div>
-    <div class="edit-wrapper"><span class="done-btn">Done editing</span></div>
-  <% end %>
-
   <div class="edit-container">
     <div>
       <span class="icon"><i class="fa fa-pencil"></i></span>
@@ -77,7 +72,10 @@
       <p>PRIOR EXPERIENCE:</p>
       <span class="icon"><i class="fa fa-pencil"></i></span>
       </i><%= best_in_place @user, :pre_wdi, as: :textarea, url: edit_user_path(@user), class: "bip" %>
-  </div>
+    </div>
+    <% if current_user?(@user) %>
+      <div class="edit-wrapper"><span class="done-btn">Done editing</span></div>
+    <% end %>
   </div>
 
 
@@ -109,10 +107,22 @@
       <%= @user.pre_wdi %>
       </p>
     </div>
+
+    <% if current_user?(@user) %>
+      <div class="edit-wrapper"><span class="edit-btn">Edit</span></div>
+    <% end %>
   </div>
 </div>
 
 <div class="column right">
+
+  <% unless current_user?(@user) || current_admin %>
+    <div class="connect">
+      <p><strong>GET SOCIAL!</strong></p>
+      <p>We strongly encourage you to connect with <%= @user.fname %> on <%= link_to "LinkedIn", "https://www.linkedin.com/in/#{@user.linkedin_username}" %>, <%= link_to "Twitter", "https://twitter.com/#{@user.twitter_username}" %>, <%= link_to "Tumblr", "http://#{@user.tumblr_username}.tumblr.com" %>, and <%= link_to "Github", "https://github.com/#{@user.github_username}" %>!</p>
+    </div>
+  <% end %>
+  
   <div class="projects-container">
     <%= "#{@user.fname}'s Projects" %>
     <% @user.projects.each do |project| %>
@@ -128,14 +138,13 @@
 
   <% if current_user?(@user) || current_admin %>
     <div class="checklist-container">
-      <h2>Checklist</h2>
+      <h2 class="checklist-title">Things To Do Before September 8th:</h2>
       <ul>
         <% @todos.each do |todo| %>
           <% if current_user %>
             <% if UserTodo.where(user_id: current_user.id, todo_id: todo.id).any? %>
               <li class="line-item color">
                 <span class="undo-btn" data-id="<%= todo.id %>">undo</span>
-
                 <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
               </li>
             <% else %>

@@ -16,6 +16,12 @@ h1 {
   width: 100%;
   height: 100vh;
   display: table;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 1em;
+  margin: 0 auto;
+
+
 }
 
 .sign-in-wrapper {
@@ -25,6 +31,12 @@ h1 {
   text-align: center;
   padding: 0 1em;
   margin: 0 auto;
+}
+
+.logs {
+  vertical-align: middle;
+  text-align: center;
+  padding: 20px;
 }
 
 .log-in {
@@ -38,6 +50,14 @@ h1 {
   margin: 0 auto;
 }
 
+.admins-sign-in-form {
+  width:50%;
+  margin-left: 300px;
+  text-align: center;
+  padding: 40px 0px;
+  background-color: rgba(93, 188, 210, .2);
+}
+
 // Admins dashboard
 a {
   color: $turquoise;
@@ -46,12 +66,16 @@ a {
 .announcements-form {
   font-size: $normal;
   width: 50%;
-  float: left;
+  float: right;
+}
+
+.announcement-board {
+  background-color: rgba(200, 200, 200, .2);
 }
 
 .checklist {
   width: 45%;
-  float: right;
+  float: left;
 }
 
 .students-list {
@@ -75,7 +99,7 @@ a {
 }
 
 .delete {
-  font-size: 8px;
+  font-size: 12px;
 }
 
 li {

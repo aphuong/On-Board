@@ -15,13 +15,17 @@
 .tweets {
   text-align: center;
   padding: 5px;
-  background: $turquoise;
+  background-color: rgba(200, 200, 200, 0.2);
 
   a {
-    color: #E6F2F5;
+    color: $turquoise;
   }
 }
 
 .tweet {
   margin-left: 20px;
+
+  #fa-tweet {
+    font-size: 22px;
+  }
 }

@@ -1,29 +1,22 @@
 nav {
   display: inline-block;
-  text-align: right;
+  text-align: center;
+  width: 100%;
 
   li {
     list-style: none;
     display: inline-block;
-    padding: 5px 10px;
-    // border-right: 1px solid #444;
-    margin-left: -4px;
+    padding: 10px;
+    margin: 20px;
+    border-bottom: 1px solid #444;
 
-    &:hover {
-      background-color: $turquoise;
-      border-radius: 50px;
-      -webkit-transition: background-color 500ms linear;
-      -moz-transition: background-color 500ms linear;
-      -o-transition: background-color 500ms linear;
-      -ms-transition: background-color 500ms linear;
-      transition: background-color 500ms linear;
-
-      a { color: #fff; }
-    }
+    a {
+      color: #444;
+      padding-bottom: 5px;
+        &:hover {
+          color: $turquoise;
+        }
+      }
   }
 }
 
-.welcome-name {
-  display: inline-block;
-  width: 62%;
-}

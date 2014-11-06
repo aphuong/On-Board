@@ -9,5 +9,19 @@
   margin-bottom: -5px;
   margin-top: 0;
   text-align: center;
-  color: #444;
+  color: $dark-gray;
+}
+
+.tweets {
+  text-align: center;
+  padding: 5px;
+  background: $turquoise;
+
+  a {
+    color: #E6F2F5;
+  }
+}
+
+.tweet {
+  margin-left: 20px;
 }

@@ -94,6 +94,7 @@ $(document).ready(function() {
 
   $(".check-btn").on('click', function(){
     item = $(this)
+    $(this).html("<strong>Completed!</strong>");
     params = { id: item.data("id") }
     $.get('/todos/checked', params, function(data) {
       item.closest(".line-item").addClass('color');
@@ -102,6 +103,7 @@ $(document).ready(function() {
 
   $(".undo-btn").on('click', function(){
     item = $(this)
+    $(this).html("");
     params = { id: item.data("id") }
     $.get('/todos/unchecked', params, function(data) {
       item.closest(".line-item").removeClass('color');

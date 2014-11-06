@@ -22,8 +22,7 @@ user9 = adduser("ken@nycda.com", "12345678")
 user10 = adduser("maneesh@nycda.com", "12345678")
 user11 = adduser("shoaib@nycda.com", "12345678")
 user12 = adduser("jason@nycda.com", "12345678")
-user13 = adduser("darlene@nycda.com", "12345678")
-user14 = adduser("eric@nycda.com", "12345678")
+user13 = adduser("eric@nycda.com", "12345678")
 
 
 # ----users profile----
@@ -91,13 +90,9 @@ user12.fname = "Jason"
 user12.lname = "Yim"
 user12.save
 
-user13.fname = "Darlene"
-user13.lname = "Portades"
+user13.fname = "Eric"
+user13.lname = "Herskovic"
 user13.save
-
-user14.fname = "Eric"
-user14.lname = "Herskovic"
-user14.save
 
 
 # ----admin----
@@ -143,26 +138,6 @@ todo6 = Todo.create do |t|
 end
 
 
-# ----hexes----
-hex_1 = Hex.create do |h|
-  h.image_url = "nyctower.png"
-end
-
-hex_2 = Hex.create do |h|
-  h.image_url = "skyline.png"
-end
-
-hex_3 = Hex.create do |h|
-  h.image_url = "streetview.png"
-end
-
-hex_4 = Hex.create do |h|
-  h.image_url = "cobblestone.png"
-end
-
-hex_5 = Hex.create do |h|
-  h.image_url = "logo.gif"
-end
 
 
 

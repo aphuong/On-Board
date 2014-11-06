@@ -14,21 +14,13 @@
   }
 
   &:nth-of-type(2) {
-    top: 269px;
+    top: 274px;
   }
 
   &:nth-of-type(3) {
-    top: 438px;
+    top: 448px;
   }
 }
-  
-  // margin-top: 100px;
-  // margin-bottom: 315px;
-
-  // &:nth-child(even) {
-  //   margin-bottom: 269px;
-  // }
-
 
 .hex-1, 
 .hex-2, 
@@ -74,36 +66,55 @@
 
   a {
     color: #fff;
+    
+    &:hover {
+      color: $light-yellow;
+    }
   }
 }
 
-
-.hex-container-1 {
-  left: 194px;
+.hex-container-1, .hex-container-3 {
   position: relative;
   display: none;
 
-  &:first-of-type {
-    left: 98px;
+  &:nth-of-type(1) {
+    left: 100px;
+  }
+
+  &:nth-of-type(2) {
+    left: 300px;
+  }
+
+  &:nth-of-type(3) {
+    left: 500px;
+  }
+
+  &:nth-of-type(4) {
+    left: 700px;
   }
 }
 
 .hex-container-2 {
-  left: 194px;
   position: relative;
   display: none;
 
-  &:first-of-type {
+  &:nth-of-type(1) {
     left: 0px;
   }
-}
 
-.hex-container-3 {
-  left: 194px;
-  position: relative;
-  display: none;
+  &:nth-of-type(2) {
+    left: 200px;
+  }
+  
+  &:nth-of-type(3) {
+    left: 400px;
+  }
 
-  &:first-of-type {
-    left: 98px;
+  &:nth-of-type(4) {
+    left: 600px;
+  }
+
+  &:nth-of-type(5) {
+    left: 800px;
   }
 }

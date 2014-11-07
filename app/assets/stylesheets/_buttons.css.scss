@@ -59,6 +59,12 @@ input[type=submit] {
   a {
     color: $red-orange;
   }
+  a:hover {
+    color: #BC380E;
+  }
+  a:active {
+    color: #952400;
+  }
 }
 
 .edit-btn, .done-btn {
@@ -79,6 +85,12 @@ input[type=submit] {
   a {
     color: $red-orange;
   }
+  a:hover {
+    color: #BC380E;
+  }
+  a:active {
+    color: #952400;
+  }
 }
 
 .round-btn {
@@ -97,8 +109,13 @@ input[type=submit] {
   position: absolute;
   right: 100px;
   top: 20px;
+  a:hover {
+    color: #3BA3BB;
+  }
+  a:active {
+    color: #1D88A1;
+  }
 }
-
 
 .login-btn {
   width: 64.016px;
@@ -116,6 +133,12 @@ input[type=submit] {
   border: 4px solid $turquoise;
   a {
     color: $turquoise;
+  }
+  a:hover {
+    color: #3BA3BB;
+  }
+  a:active {
+    color: #1D88A1;
   }
 }
 
@@ -136,6 +159,12 @@ input[type=submit] {
   a {
     color: $turquoise;
   }
+  a:hover {
+    color: #3BA3BB;
+  }
+  a:active {
+    color: #1D88A1;
+  }
 }
 
 .user-login-btn {
@@ -153,8 +182,13 @@ input[type=submit] {
   a {
     color: $turquoise;
   }
+  a:hover {
+    color: #3BA3BB;
+  }
+  a:active {
+    color: #1D88A1;
+  }
 }
-
 
 .invite-btn {
   width: 124.016px;
@@ -173,5 +207,10 @@ input[type=submit] {
   a {
     color: $turquoise;
   }
+  a:hover {
+    color: #3BA3BB;
+  }
+  a:active {
+    color: #1D88A1;
+  }
 }
-

@@ -123,33 +123,9 @@ a {
   margin-bottom: 10px;
 }
 
-.students-list {
-  clear: both;
-  font-size: 1.5em;
-}
-
-.students-list p {
-  display: inline-block;
-  width: 200px;
-  margin-left: 160px;
-}
-
 #done-announcement-btn {
   width: 200px;
-}
-
-.students-list p {
-  display: inline-block;
-  width: 200px;
-  margin-left: 160px;
-}
-
-#done-announcement-btn {
-  width: 200px;
-}
-
-#done-announcement-btn {
-  display:none
+  display: none;
 }
 
 .edit-announcement {
@@ -172,7 +148,18 @@ li {
   list-style: none;
 }
 
+.students-list {
+  clear: both;
+  font-size: 1.5em;
+  max-height: 350px;
+}
+
+.admins-footer {
+  margin-left: 50px;
+}
+
 .profile-list {
-  max-height: 250px;
-  display: inline;
+  display: inline-block;
+  width: 300px;
+  margin: 10px auto;
 }

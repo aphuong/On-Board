@@ -131,52 +131,54 @@
       <p>We strongly encourage you to connect with <%= @user.fname %> on <%= link_to "LinkedIn", "https://www.linkedin.com/in/#{@user.linkedin_username}" %>, <%= link_to "Twitter", "https://twitter.com/#{@user.twitter_username}" %>, <%= link_to "Tumblr", "http://#{@user.tumblr_username}.tumblr.com" %>, and <%= link_to "Github", "https://github.com/#{@user.github_username}" %>!</p>
     </div>
   <% end %>
-  
+
   <h3><%= "#{@user.fname}'s Projects" %></h3>
-    <% @user.projects.each do |project| %>
-      <div class="projects-container">
-        <div class="proj-col">
-          <%= link_to project.project_url do %>
-            <p><%= project.title.upcase %><p>
-            <p><%= project.description %></p>
+  <% @user.projects.each do |project| %>
+    <div class="projects-container">
+      <div class="proj-col">
+        <%= link_to project.project_url do %>
+          <p><%= project.title.upcase %><p>
+          <p><%= project.description %></p>
+          <% if current_user %>
             <%= link_to "Delete", project_path(project.id), method: :delete, class: "del-btn" %>
-          </div>
-          <div class="proj-col">
-          <div><%= image_tag project.image_url(:thumb).to_s %></div>
-          </div>
-        <% end %>
+          <% end %>
+      </div>
+      <div class="proj-col">
+        <div><%= image_tag project.image_url(:thumb).to_s %></div>
       </div>
     <% end %>
+  <% end %>
+    </div>
 
-  <% if current_user?(@user) || current_admin %>
-    <div class="checklist-container">
-      <h2 class="checklist-title">Things To Do Before September 8th:</h2>
-      <ul>
-        <% @todos.each do |todo| %>
-          <% if current_user %>
-            <% if UserTodo.where(user_id: current_user.id, todo_id: todo.id).any? %>
-              <li class="line-item color">
-                <span class="undo-btn" data-id="<%= todo.id %>">undo</span>
-                <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
+    <% if current_user?(@user) || current_admin %>
+      <div class="checklist-container">
+        <h2 class="checklist-title">Things To Do Before September 8th:</h2>
+        <ul>
+          <% @todos.each do |todo| %>
+            <% if current_user %>
+              <% if UserTodo.where(user_id: current_user.id, todo_id: todo.id).any? %>
+                <li class="line-item color">
+                  <span class="undo-btn" data-id="<%= todo.id %>">undo</span>
+                  <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
               </li>
             <% else %>
               <li class="line-item">
-              <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
-              </li>
-            <% end %>
+                <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
+            </li>
           <% end %>
         <% end %>
+      <% end %>
 
-        <% if current_admin %>
-          
-          <% @usertodos.each do |usertodo| %>
-            <% if usertodo %>
-              <li class="line-item color"><p>COMPLETE:</p><%= usertodo.todo.body %></li>
-            <% end %>
+      <% if current_admin %>
+
+        <% @usertodos.each do |usertodo| %>
+          <% if usertodo %>
+            <li class="line-item color"><p>COMPLETE:</p><%= usertodo.todo.body %></li>
           <% end %>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
+      <% end %>
+        </ul>
+      </div>
+    <% end %>
 </div>
 

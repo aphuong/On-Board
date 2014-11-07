@@ -123,18 +123,16 @@
     </div>
   <% end %>
   
-  <div class="projects-container">
-    <%= "#{@user.fname}'s Projects" %>
+  <h3><%= "#{@user.fname}'s Projects" %></h3>
     <% @user.projects.each do |project| %>
-      <%= image_tag project.image_url(:thumb).to_s %>
-      <%= link_to project.project_url do %>
-        <p><%= project.title %><p>
-        <%= link_to "Delete", project_path(project.id), method: :delete %>
-      <% end %>
-
+      <div class="projects-container">
+        <%= link_to project.project_url do %>
+          <p><%= project.title %><p>
+          <div><%= image_tag project.image_url(:thumb).to_s %></div>
+          <%= link_to "Delete", project_path(project.id), method: :delete %>
+        <% end %>
+      </div>
     <% end %>
-
-  </div>
 
   <% if current_user?(@user) || current_admin %>
     <div class="checklist-container">
@@ -152,13 +150,14 @@
               <span class="check-btn" data-id="<%= todo.id %>"><%= image_tag("check.png", size: "20x20") %></span><%= todo.body %>
               </li>
             <% end %>
-          <% else %>
+          <% end %>
+        <% end %>
 
-            <% if current_admin %>
-              <p>Completed tasks:</p>
-              <% @usertodos.each do |usertodo| %>
-                <li class="line-item color"><%= usertodo.todo.body %></li>
-              <% end %>
+        <% if current_admin %>
+          
+          <% @usertodos.each do |usertodo| %>
+            <% if usertodo %>
+              <li class="line-item color"><p>COMPLETE:</p><%= usertodo.todo.body %></li>
             <% end %>
           <% end %>
         <% end %>

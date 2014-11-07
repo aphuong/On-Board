@@ -10,7 +10,6 @@
 
   <div class="announcements-form">
     <%= form_for @announcement do |f| %>
-      <%= f.label :body, "Announcement" %><br>
       <%= f.text_area :body, placeholder: "Create an announcement to post to students' page", required: true %><br>
       <span class="admins-btn"><%= f.submit %></span>
     <% end %>
@@ -38,8 +37,7 @@
   </div>
 
   <%= form_for @todo do |f| %>
-    <%= f.label :body, "List item" %><br>
-    <%= f.text_field :body, placeholder: "Add a tasks for students to complete", required: true %><br>
+    <%= f.text_field :body, placeholder: "Add a task for students to complete", required: true %><br>
     <span class="admins-btn"><%= f.submit %></span>
   <% end %>
 

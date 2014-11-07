@@ -105,6 +105,12 @@
   text-align: left;
 }
 
+.alt-font {
+  font-family: $font-sanchez, sans-serif;
+  font-weight: 200;
+  font-size: 1.4em;
+}
+
 .column {
   display: inline-block;
   vertical-align: top;

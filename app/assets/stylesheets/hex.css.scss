@@ -3,7 +3,7 @@
 }
 
 .hex-title {
- margin-left: 30px;  
+ margin-left: 30px;
 }
 
 .hex-section {
@@ -22,12 +22,12 @@
   }
 }
 
-.hex-1, 
-.hex-2, 
+.hex-1,
+.hex-2,
 .hex-3 {
   width: 190px;
   height: 110px;
-  background-color: $turquoise;
+  background-color: #85BEAB;
   display: inline-block;
   position: absolute;
 }
@@ -48,32 +48,47 @@
   transform: rotate(60deg);
 }
 
-.row { 
+.row {
   display: none;
 
-  .hex-1, 
-  .hex-2, 
+  .hex-1,
+  .hex-2,
   .hex-3 {
+    transition: background-color 0.3s ease;
+    // transition: width 0.2s ease;
+    // transition: height 0.2s ease;
     left: 0px;
+  }
+}
+
+.hex-container:hover {
+
+  .row {
+    position: relative;
+    right: 14px;
+    top: -8px;
+
+    .hex-1,
+    .hex-2,
+    .hex-3 {
+      background: pink;
+      width: 219px;
+      height: 126px;
+      z-index: 1;
+    }
   }
 }
 
 .text {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   margin-top: 30px;
   width: 190px;
   font-size: 2em;
   text-align: center;
+  color: #fff;
+  text-shadow: 2px 4px 16px #868686;
 
-  a {
-    color: #fff;
-      text-shadow: 2px 1px 1px #000;
-
-    &:hover {
-      font-size: 1.3em;
-    }
-  }
 }
 
 .hex-container.one, .hex-container.three {
@@ -106,7 +121,7 @@
   &:nth-of-type(2) {
     left: 200px;
   }
-  
+
   &:nth-of-type(3) {
     left: 400px;
   }
@@ -120,23 +135,24 @@
   }
 }
 
+// Give each hex rectangle a different color
 .hex-container .row div {
   &:nth-child(odd) {
     // background: rgba(234, 203, 48, 0.93)
     // background: rgba(175, 227, 231, 1);
-        background: rgba(100, 185, 0, .4);
+    // background: rgba(100, 185, 0, .4);
   }
 
   &:nth-child(even) {
-    background: rgba(141, 209, 218, 1);
+    // background: rgba(141, 209, 218, 1);
     // background: rgba(0, 150, 255, .1);
-        // background: rgba(0, 150, 255, .2);
+    // background: rgba(0, 150, 255, .2);
 
   }
 
   &:nth-child(3n+0) {
-    background: rgba(197, 189, 184, 0.48);
+    // background: rgba(197, 189, 184, 0.48);
     // background: rgba(120, 187, 195, 0.88);
-        // background: rgba(255, 100, 0, .2);
+    // background: rgba(255, 100, 0, .2);
   }
 }

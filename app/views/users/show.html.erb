@@ -120,8 +120,14 @@
     <span>
       <% (@user.projects.count + @usertodos.count).times do %>
         <i class="fa fa-star"></i>
+      <% if (@user.projects.count + @usertodos.count) > 0 %>
+        <h3 class="achievement-text">Achievements</h3>
+        <% (@user.projects.count + @usertodos.count).times do %>
+          <span class="stars"><i class="fa fa-star"></i></span>
+        <% end %>
+
+        <span class="star-info">Earn a star for posting projects and checking off todos!</span>
       <% end %>
-    </span>
   </div>
 
 

@@ -116,12 +116,14 @@
 
 <div class="column right">
   <div>
-    <h3>Achievements</h3>
-    <span>
-      <% (@user.projects.count + @usertodos.count).times do %>
-        <i class="fa fa-star"></i>
+      <% if (@user.projects.count + @usertodos.count) > 0 %>
+        <h3 class="achievement-text">Achievements</h3>
+        <% (@user.projects.count + @usertodos.count).times do %>
+          <span class="stars"><i class="fa fa-star"></i></span>
+        <% end %>
+
+        <span class="star-info">Earn a star for posting projects and checking off todos!</span>
       <% end %>
-    </span>
   </div>
 
 
@@ -132,21 +134,20 @@
     </div>
   <% end %>
   
-  <h3><%= "#{@user.fname}'s Projects" %></h3>
-    <% @user.projects.each do |project| %>
-      <div class="projects-container">
+  <% @user.projects.each do |project| %>
+    <div class="projects-container">
+      <div class="proj-col">
+        <%= link_to project.project_url do %>
+          <p><%= project.title.upcase %><p>
+          <p><%= project.description %></p>
+          <%= link_to "Delete", project_path(project.id), method: :delete, class: "del-btn" %>
+        </div>
         <div class="proj-col">
-          <%= link_to project.project_url do %>
-            <p><%= project.title.upcase %><p>
-            <p><%= project.description %></p>
-            <%= link_to "Delete", project_path(project.id), method: :delete, class: "del-btn" %>
-          </div>
-          <div class="proj-col">
-          <div><%= image_tag project.image_url(:thumb).to_s %></div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+        <div><%= image_tag project.image_url(:thumb).to_s %></div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
   <% if current_user?(@user) || current_admin %>
     <div class="checklist-container">

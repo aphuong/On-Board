@@ -49,7 +49,6 @@ $(document).ready(function() {
     }
   });
 
-
   $(".edit-btn").click(function(){
     $(".edit-container").show();
     $(".profile-container").hide();
@@ -118,6 +117,9 @@ $(document).ready(function() {
     });
   });
 
+  $(".achievement-text").hover(function(){
+    $(".star-info").toggle();
+  })
 
 
 });

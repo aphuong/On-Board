@@ -5,10 +5,10 @@
 <% end %>
 
 <h3 class="username">
-  <span class="update-from-bip", data-name="fname">
+  <span class="update-from-bip alt-font", data-name="fname">
     <%= @user.fname %>
   </span>
-  <span class="update-from-bip", data-name="lname">
+  <span class="update-from-bip alt-font", data-name="lname">
     <%= @user.lname %>
   </span>
 </h3>
@@ -117,11 +117,10 @@
 <div class="column right">
   <div>
     <% if (@user.projects.count + @usertodos.count) > 0 %>
-      <h3 class="achievement-text">Achievements</h3>
+      <h3 class="achievement-text alt-font">Achievements</h3>
       <% (@user.projects.count + @usertodos.count).times do %>
         <span class="stars"><i class="fa fa-star"></i></span>
       <% end %>
-
       <span class="star-info">Earn a star for posting projects and checking off todos!</span>
     <% end %>
   </div>
@@ -153,7 +152,7 @@
 
     <% if current_user?(@user) || current_admin %>
       <div class="checklist-container">
-        <h2 class="checklist-title">Things To Do Before September 8th:</h2>
+        <h2 class="checklist-title alt-font">Things To Do Before September 8th:</h2>
         <ul>
           <% @todos.each do |todo| %>
             <% if current_user %>

@@ -42,7 +42,8 @@
 .hex-3 {
   width: 190px;
   height: 110px;
-  background-color: #85BEAB;
+  // background-color: #85BEAB;
+  background-image: url(6.png);
   display: inline-block;
   position: absolute;
 }
@@ -86,7 +87,7 @@
     .hex-1,
     .hex-2,
     .hex-3 {
-      background: #51D8AB;
+      background: $red-orange;
       width: 219px;
       height: 126px;
       z-index: 1;

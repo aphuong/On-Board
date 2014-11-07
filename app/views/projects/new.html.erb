@@ -7,7 +7,7 @@
   <%= f.label :title, "Title" %>
   <%= f.text_field :title,  :maxlength => 40, class: "form-control", autofocus: true, placeholder: "Project title", required: true %><br>
   <%= f.label :project_url, "Link to your project: " %>
-  <%= f.text_field :project_url,  :maxlength => 40, class: "form-control", placeholder: "http://username.github.io/projectname/", required: true %><br>
+  <%= f.text_field :project_url,  :maxlength => 100, class: "form-control", placeholder: "http://username.github.io/projectname/", required: true %><br>
   <%= f.label :image, "Add a Screenshot:" %>
   <%= f.file_field :image %><br>
   <span class="edit-btn"><%= f.submit %></span>

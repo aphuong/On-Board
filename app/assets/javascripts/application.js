@@ -111,9 +111,10 @@ $(document).ready(function() {
   });
 
   $(window).load(function(){
-    $(".hex-container .row").each(function(i) {
-      fade_time = (i + 1) * 400
-      $(this).fadeIn(fade_time);
+    $(".hex-container").each(function(i) {
+      fade_time = (i + 1) * 100
+      row = $(this).find('.row')
+      row.fadeIn(fade_time);
     });
   });
 

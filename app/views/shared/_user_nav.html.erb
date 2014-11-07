@@ -1,11 +1,16 @@
 <div class="wrapper">
   <nav>
     <ul>
-      <li><%= link_to "HOME", authenticated_user_path %></li>
       <li><%= link_to "PROFILE", show_user_path(current_user) %></li>
+      <li><%= link_to "EDIT", edit_user_path(current_user) %></li>
+      <li>
+        <%= link_to authenticated_user_path do %>
+          <%= image_tag 'smlogo.png' %>
+        <% end %>
+      </li>
       <li><%= link_to "ADD PROJECT", new_project_path(current_user) %></li>
-      <li><%= link_to "EDIT ACCOUNT", edit_user_path(current_user) %></li>
       <li><%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %></li>
     </ul>
   </nav>
 </div>
+

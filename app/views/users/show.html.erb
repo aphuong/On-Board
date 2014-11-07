@@ -115,6 +115,15 @@
 </div>
 
 <div class="column right">
+  <div>
+    <h3>Achievements</h3>
+    <span>
+      <% (@user.projects.count + @usertodos.count).times do %>
+        <i class="fa fa-star"></i>
+      <% end %>
+    </span>
+  </div>
+
 
   <% unless current_user?(@user) || current_admin %>
     <div class="connect">
@@ -126,10 +135,15 @@
   <h3><%= "#{@user.fname}'s Projects" %></h3>
     <% @user.projects.each do |project| %>
       <div class="projects-container">
-        <%= link_to project.project_url do %>
-          <p><%= project.title %><p>
+        <div class="proj-col">
+          <%= link_to project.project_url do %>
+            <p><%= project.title.upcase %><p>
+            <p><%= project.description %></p>
+            <%= link_to "Delete", project_path(project.id), method: :delete, class: "del-btn" %>
+          </div>
+          <div class="proj-col">
           <div><%= image_tag project.image_url(:thumb).to_s %></div>
-          <%= link_to "Delete", project_path(project.id), method: :delete %>
+          </div>
         <% end %>
       </div>
     <% end %>

@@ -87,10 +87,15 @@
     .hex-1,
     .hex-2,
     .hex-3 {
-      background: $red-orange;
+      // background: $red-orange;
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAATklEQVQYV2O0O3X+PwMQHDIzZATRuAAj0QqxmfDghh3YFgWNQ3BbsFpHtEJstjDqtW4GW3Op2he/Z4hWiM0avc2TILb45uH3DNEKsdkCAOYtIAt+z2XQAAAAAElFTkSuQmCC)repeat;
       width: 219px;
       height: 126px;
       z-index: 1;
+    }
+
+    .text {
+      color: #444;
     }
   }
 }

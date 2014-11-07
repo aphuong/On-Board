@@ -78,6 +78,12 @@
 }
 
 .hex-container:hover {
+   .text {
+      color: #444;
+      text-shadow: 2px 4px 16px #868686;
+      font-size: 3em;
+      font-family: $font-sanchez;
+    }
 
   .row {
     position: relative;
@@ -92,10 +98,6 @@
       width: 219px;
       height: 126px;
       z-index: 1;
-    }
-
-    .text {
-      color: #444;
     }
   }
 }

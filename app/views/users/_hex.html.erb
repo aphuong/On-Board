@@ -1,6 +1,14 @@
 <%= link_to show_user_path(user) do %>
   <span class="text"><%= user.fname %></span>
 
+  <div class="hex-wrapper shadow">
+    <div class="row">
+      <div class="col-4 hex-1"></div>
+      <div class="col-4 hex-2"></div>
+      <div class="col-4 hex-3"></div>
+    </div>
+  </div>
+
   <div class="hex-wrapper">
     <div class="row">
       <div class="col-4 hex-1"></div>
@@ -8,4 +16,5 @@
       <div class="col-4 hex-3"></div>
     </div>
   </div>
+
 <% end %>

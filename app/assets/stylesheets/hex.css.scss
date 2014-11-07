@@ -22,6 +22,21 @@
   }
 }
 
+.hex-wrapper.shadow {
+
+  .row {
+    position: relative;
+    right: -2px;
+    top: 3px;
+  }
+
+  .hex-1,
+  .hex-2,
+  .hex-3 {
+    background-color: rgb(164, 150, 173);
+  }
+}
+
 .hex-1,
 .hex-2,
 .hex-3 {
@@ -71,7 +86,7 @@
     .hex-1,
     .hex-2,
     .hex-3 {
-      background: pink;
+      background: #51D8AB;
       width: 219px;
       height: 126px;
       z-index: 1;

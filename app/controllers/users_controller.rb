@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 
+  before_action :set_user, only: [:show, :edit, :update]
+
   def home
+
   end
 
   def index
@@ -16,18 +19,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @todos = Todo.all
     @usertodos =  UserTodo.where(user_id: @user.id)
     @project = @user.projects
   end
 
   def edit
-    @user = User.find(params[:id])
+
   end
 
+
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       respond_to do |format|
         format.html { redirect_to edit_user_path(@user), notice: 'User profile successfully updated.' }
@@ -54,6 +56,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:password, :password_confirmation, :current_password, :email, :fname, :lname, :location, :github_username, :twitter_username, :tumblr_username, :linkedin_username, :goal, :fun_fact, :pre_wdi, :project)
   end
 
+  def set_user
+    @user = User.find(params[:id])
+  end
+
 end
-
-

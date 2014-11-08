@@ -139,7 +139,7 @@
         <%= link_to project.project_url do %>
           <p><%= project.title.upcase %><p>
           <p><%= project.description %></p>
-          <% if current_user %>
+          <% if current_user?(@user) %>
             <%= link_to "Delete", project_path(project.id), method: :delete, class: "del-btn" %>
           <% end %>
       </div>

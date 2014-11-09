@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
       # notice: "New project added!"
       redirect_to show_user_path(current_user.id)
     else
-      # alert: "Please try again, something went wrong."
+      alert: "Please try again, something went wrong."
       render :new
     end
   end

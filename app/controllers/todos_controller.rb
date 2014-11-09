@@ -9,7 +9,7 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new(todos_params)
     if @todo.save
-      flash[:notice] = "A list item was successfully created."
+      # flash[:notice] = "A list item was successfully created."
       redirect_to admins_dashboard_path
     else
       flash[:alert] = "We encountered a problem. Please try again."

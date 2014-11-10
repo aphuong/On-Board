@@ -1,7 +1,7 @@
 <%= form_for(:admin, url: session_path(:admin)) do |f| %>
   <div class="log-in">
   <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true, class: "email-input" %></div>
+  <%= f.email_field :email, autofocus: true, autocomplete: "off", class: "email-input" %></div>
 
   <div><%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off", class: "password-input" %></div>

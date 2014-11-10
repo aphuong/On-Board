@@ -137,6 +137,30 @@ todo6 = Todo.create do |t|
   t.body = "Start a blog on Tumblr, share your Tweets and create a LinkedIn account"
 end
 
+# ----projects----
+project_1 = Project.create do |p|
+  p.user_id = 1
+  p.title = "Shopping List App"
+  p.project_url = "http://aphuong.github.io/shoppinglist/"
+  p.string = "shoppinglist.png"
+  p.description = "This project was built using JavaScript and JQuery."
+end
+
+project_2 = Project.create do |p|
+  p.user_id = 1
+  p.title = "Dog Breed Quiz"
+  p.project_url = "http://aphuong.github.io/dog_breed_quiz/"
+  p.string = "quiz.png"
+  p.description = "Play the Mystery Dog Breed Game!"
+end
+
+project_3 = Project.create do |p|
+  p.user_id = 1
+  p.title = "FizzBuzz Refactor"
+  p.project_url = "http://aphuong.github.io/fizzbuzz-refactor/"
+  p.string = "fizzbuzz.png"
+  p.description = "The FizzBuzz Refactor tells you if your number fizz, buzz or fizzbuzzes!"
+end
 
 
 

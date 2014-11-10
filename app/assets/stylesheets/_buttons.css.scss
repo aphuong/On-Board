@@ -30,13 +30,16 @@ input[type=submit] {
 }
 
 @-webkit-keyframes slowFade {
+
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 // User#show
 .done-btn {
   display: none;
@@ -56,18 +59,22 @@ input[type=submit] {
   color: $red-orange;
   appearance: none;
   border: 2px solid $red-orange;
+
   a {
     color: $red-orange;
   }
+
   a:hover {
     color: #BC380E;
   }
+
   a:active {
     color: #952400;
   }
 }
 
-.edit-btn, .done-btn {
+.edit-btn,
+.done-btn {
   text-align: left;
   width: 64.016px;
   height: 32px;
@@ -82,12 +89,15 @@ input[type=submit] {
   color: $red-orange;
   appearance: none;
   border: 2px solid $red-orange;
+
   a {
     color: $red-orange;
   }
+
   a:hover {
     color: #BC380E;
   }
+
   a:active {
     color: #952400;
   }
@@ -109,9 +119,11 @@ input[type=submit] {
   position: absolute;
   right: 100px;
   top: 20px;
+
   a:hover {
     color: #3BA3BB;
   }
+
   a:active {
     color: #1D88A1;
   }
@@ -131,12 +143,15 @@ input[type=submit] {
   color: $turquoise;
   appearance: none;
   border: 4px solid $turquoise;
+
   a {
     color: $turquoise;
   }
+
   a:hover {
     color: #3BA3BB;
   }
+
   a:active {
     color: #1D88A1;
   }
@@ -156,12 +171,15 @@ input[type=submit] {
   color: $turquoise;
   appearance: none;
   border: 2px solid $turquoise;
+
   a {
     color: $turquoise;
   }
+
   a:hover {
     color: #3BA3BB;
   }
+
   a:active {
     color: #1D88A1;
   }
@@ -179,12 +197,15 @@ input[type=submit] {
   color: #fff;
   appearance: none;
   border: 4px solid $turquoise;
+
   a {
     color: $turquoise;
   }
+
   a:hover {
     color: #3BA3BB;
   }
+
   a:active {
     color: #1D88A1;
   }
@@ -204,12 +225,15 @@ input[type=submit] {
   color: $turquoise;
   appearance: none;
   border: 2px solid $turquoise;
+
   a {
     color: $turquoise;
   }
+
   a:hover {
     color: #3BA3BB;
   }
+
   a:active {
     color: #1D88A1;
   }

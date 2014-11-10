@@ -20,8 +20,19 @@
 .logo {
   width: 650px;
   -webkit-animation-name: bounceInDown;
+  -moz-animation-name: bounceInDown;
+  -o-animation-name: bounceInDown;
+  animation-name: bounceInDown;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
   -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
   opacity: 1;
   transition: opacity .25s ease-in-out;
   display: inline-block;
@@ -30,29 +41,74 @@
 }
 
 @-webkit-keyframes bounceInDown {
+
   0% { 
     opacity: 0;
     -webkit-transform: translateY(-2000px);
-    transform: translateY(-2000px)
+    transform: translateY(-2000px);
   }
+
   60% {
     opacity:1;
     -webkit-transform: translateY(1em);
-    transform: translateY(1em)
+    transform: translateY(1em);
   }
+
   80% {
     -webkit-transform: translateY(-0.5em);
     transform: translateY(-0.5em);
   }
+
   100% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
+
+@-keyframes bounceInDown{
+  
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(1em);
+    -ms-transform: translateY(1em);
+    transform: translateY(1em);
+  }
+
+  80% {
+    -webkit-transform: translateY(-0.5em);
+    -ms-transform: translateY(-0.5em);
+    transform: translateY(-0.5em);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
 .fadeIn {
   -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  animation-name: fadeIn;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
   -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
   box-sizing: border-box;
   font-weight: 300;
   font-size: 4.5em;
@@ -62,19 +118,68 @@
 }
 
 @-webkit-keyframes fadeIn {
+
   0% {
     opacity: 0;
   }
+
   100% {
-    opacity: 1
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-keyframes fadeIn {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
 .reveal {
   -webkit-animation-name: reveal;
+  -moz-animation-name: reveal;
+  -o-animation-name: reveal;
+  animation-name: reveal;
   -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
+  -o-animation-delay: 1.5s;
+  animation-delay: 1.5s;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
   -webkit-animation-duration: 1.11s;
+  -moz-animation-duration: 1.11s;
+  -ms-animation-duration: 1.11s;
+  -o-animation-duration: 1.11s;
+  animation-duration: 1.11s;
   display: inline-block;
   text-indent: -20em;
   box-sizing: border-box;
@@ -85,17 +190,74 @@
 }
 
 @-webkit-keyframes reveal {
+
   0% {
     text-indent: -20em;
-    opacity: 0
+    opacity: 0;
   }
+
   50% {
     text-indent: 0;
     opacity: 1;
   }
+
   100% {
     text-indent: 0;
-    opacity: 1
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes reveal {
+
+  0% {
+    text-indent: -20em;
+    opacity: 0;
+  }
+
+  50% {
+    text-indent: 0;
+    opacity: 1;
+  }
+
+  100% {
+    text-indent: 0;
+    opacity: 1;
+  }
+}
+
+@-o-keyframes reveal {
+
+  0% {
+    text-indent: -20em;
+    opacity: 0;
+  }
+
+  50% {
+    text-indent: 0;
+    opacity: 1;
+  }
+
+  100% {
+    text-indent: 0;
+    opacity: 1;
+  }
+}
+
+@-keyframes reveal {
+
+  0% {
+    text-indent:-20em;
+    opacity: 0;
+  }
+
+  50% {
+    text-indent: 0;
+    opacity: 1;
+  }
+
+  100% {
+    text-indent: 0;
+    opacity: 1;
   }
 }
 
@@ -171,6 +333,7 @@
   width: 45%;
   display: inline-block;
   vertical-align: top;
+
     a {
       color: #444;
     }
@@ -308,7 +471,9 @@
   margin-left: 10px;
 }
 
-.profile-container, .edit-container, .connect {
+.profile-container,
+.edit-container,
+.connect {
   background-color: rgba(200, 200, 200, 0.2);
   box-shadow: 0 4px 2px -2px rgba(100, 100, 100, 0.4);
   border-radius: 5px;

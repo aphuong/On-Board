@@ -9,7 +9,7 @@ class AnnouncementsController < ApplicationController
   def create
     @announcement = Announcement.new(announcement_params)
     if @announcement.save
-      flash[:notice] = "Your announcement has been successfully broadcast."
+      # flash[:notice] = "Your announcement has been successfully broadcast."
       redirect_to admins_dashboard_path
     else
       flash[:alert] = "We encountered a problem. Please try again."

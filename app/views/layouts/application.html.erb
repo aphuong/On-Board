@@ -11,12 +11,10 @@
   </head>
   <body>
 
- <!--    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% elsif alert %>
+    <% if alert %>
       <p class="alert"><%= alert %></p>
-    <% end %>  -->
-    
+    <% end %>
+
     <% if current_user %>
       <%= render partial: 'shared/user_nav' %>
     <% end %>

@@ -14,12 +14,13 @@ class ProjectsController < ApplicationController
     @project.user_id = current_user.id
 
     if @project.save
-      # notice: "New project added!"
+      flash[:notice] = "New project added!"
       redirect_to show_user_path(current_user.id)
     else
-      alert: "Please try again, something went wrong."
+      flash[:alert] = "Please try again, something went wrong."
       render :new
     end
+
   end
 
   def destroy
@@ -35,4 +36,3 @@ class ProjectsController < ApplicationController
   end
 
 end
-

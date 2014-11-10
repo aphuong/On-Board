@@ -1,28 +1,14 @@
-== README
+# On-Board
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Description
+On-Board was built to enhance student experience prior to beginning the Web Development Intensive program at New York Code and Design Academy.
 
-Things you may want to cover:
+### Set Up
+- Pull down the repository 
+- Run Bundle Install
+- Run Rake db:setup
+- Run rails s to start the server
+- Go to localhost:3000 in your browser
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+### Deployment
+- TBD

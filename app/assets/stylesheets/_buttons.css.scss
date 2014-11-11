@@ -73,7 +73,35 @@ input[type=submit] {
   }
 }
 
-.edit-btn,
+
+.devise-admins-btn {
+  width: 64.016px;
+  height: 32px;
+  line-height: 30px;
+  vertical-align: middle;
+  padding: 0 25.6px;
+  font-weight: 300;
+  font-family: $font-stack;
+  border-radius: 50px;
+  transition-property: all;
+  transition-duration: .3s;
+  color: $red-orange;
+  appearance: none;
+  border: 2px solid $red-orange;
+
+  a {
+    color: $red-orange;
+  }
+
+  &:hover {
+    color: #BC380E;
+  }
+
+  &:active {
+    color: #952400;
+  }
+}
+
 .done-btn {
   text-align: left;
   width: 64.016px;
@@ -94,11 +122,11 @@ input[type=submit] {
     color: $red-orange;
   }
 
-  a:hover {
+  &:hover {
     color: #BC380E;
   }
 
-  a:active {
+  &:active {
     color: #952400;
   }
 }
@@ -148,16 +176,44 @@ input[type=submit] {
     color: $turquoise;
   }
 
-  a:hover {
+  &:hover {
     color: #3BA3BB;
   }
 
-  a:active {
+  &:active {
     color: #1D88A1;
   }
 }
 
 .edit-btn {
+  width: 64.016px;
+  height: 32px;
+  line-height: 30px;
+  vertical-align: middle;
+  padding: 0 25.6px;
+  font-weight: 300;
+  font-family: $font-stack;
+  border-radius: 50px;
+  transition-property: all;
+  transition-duration: .3s;
+  color: $turquoise;
+  appearance: none;
+  border: 2px solid $turquoise;
+
+  a {
+    color: $turquoise;
+  }
+
+  &:hover {
+    color: #3BA3BB;
+  }
+
+  &:active {
+    color: #1D88A1;
+  }
+}
+
+.devise-edit-btn {
   width: 64.016px;
   height: 32px;
   line-height: 30px;
@@ -202,11 +258,11 @@ input[type=submit] {
     color: $turquoise;
   }
 
-  a:hover {
+  &:hover {
     color: #3BA3BB;
   }
 
-  a:active {
+  &:active {
     color: #1D88A1;
   }
 }
@@ -230,11 +286,11 @@ input[type=submit] {
     color: $turquoise;
   }
 
-  a:hover {
+  &:hover {
     color: #3BA3BB;
   }
 
-  a:active {
+  &:active {
     color: #1D88A1;
   }
 }

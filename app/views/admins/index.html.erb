@@ -11,7 +11,7 @@
   <div class="announcements-form">
     <%= form_for @announcement do |f| %>
       <%= f.text_area :body, placeholder: "Create an announcement to post to students' page", required: true %><br>
-      <span class="admins-btn"><%= f.submit %></span>
+      <span class="devise-admins-btn"><%= f.submit %></span>
     <% end %>
 
 
@@ -38,7 +38,7 @@
 
   <%= form_for @todo do |f| %>
     <%= f.text_field :body, placeholder: "Add a task for students to complete", required: true %><br>
-    <span class="admins-btn"><%= f.submit %></span>
+    <span class="devise-admins-btn"><%= f.submit %></span>
   <% end %>
 
   <div class="checklist">

@@ -27,6 +27,14 @@ input[type=submit] {
   background-color: $red-orange;
   appearance: none;
   border: 4px solid $red-orange;
+
+  &:hover {
+    color: #BC380E;
+  }
+
+  &:active {
+    color: #952400;
+  }
 }
 
 @-webkit-keyframes slowFade {

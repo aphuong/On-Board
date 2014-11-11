@@ -2,13 +2,6 @@
  *= require_self
  */
 
-// .delete-form,
-// .profile-form,
-// .account-form {
-//   background-color: #efefef;
-//   margin-bottom: 30px;
-// }
-
 
 // Variables
 @import 'variables';
@@ -24,7 +17,7 @@
 @import 'main';
 @import 'hex';
 @import 'users_index';
-
+@import 'todo';
 
 // Partial
 @import 'user_nav';
@@ -33,4 +26,3 @@
 // Components
 @import 'forms';
 @import 'buttons';
-@import 'marquee';

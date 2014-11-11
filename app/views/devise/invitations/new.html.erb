@@ -10,7 +10,7 @@
   <div class="invitation-form">
     <% resource.class.invite_key_fields.each do |field| -%>
       <p><%= f.label field %><br />
-      <%= f.text_field field %></p>
+      <%= f.text_field field, required: true %></p>
     <% end -%>
 
     <p class="invite-btn"><%= f.submit t("devise.invitations.new.submit_button") %></p>

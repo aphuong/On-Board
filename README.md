@@ -19,6 +19,8 @@ Setup the database:
 rake db:setup
 ```
 
+**Make sure that Postgres is running on your local machine**
+
 Start up the server on your local machine:
 ```
 rails s

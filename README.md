@@ -29,5 +29,35 @@ rails s
 Go to localhost:3000 in your browser.
 
 ### Deployment
-- TBD
+
+#####To log in as a user:
+```
+http://onboard-app.herokuapp.com/
+```
+
+```
+username: nathan@nycda.com
+```
+
+```
+password: 12345678
+```
+
+#####To log in as the admin:
+```
+http://onboard-app.herokuapp.com/admins
+```
+
+```
+username: robin@nycda.com
+```
+
+```
+password: 12345678
+```
+
+
+
+
+
 

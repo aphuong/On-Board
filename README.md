@@ -43,19 +43,6 @@ username: nathan@nycda.com
 password: 12345678
 ```
 
-#####To log in as the admin:
-```
-http://onboard-app.herokuapp.com/admins
-```
-
-```
-username: robin@nycda.com
-```
-
-```
-password: 12345678
-```
-
 
 
 
